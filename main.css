@@ -9,78 +9,37 @@ header {
     background-color: white;
     z-index: 1;
 }
-* {box-sizing: border-box;}
 body {
+  font-family: 'Raleway', sans-serif;
+  color: #000000;
   margin: 0;
-  background: #f2f2f2;
 }
-header a {
-  display: block;
-  text-decoration: none;
-  outline: none;  
-  transition: .3s ease-in-out;
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.logo {
-  color: #D5B45B;
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5em;
-  padding: 20px 0;
+.post {
+    max-width: 60%;
 }
-nav {
-  display: table;
-  margin: 0 auto;
+.html_ico {
+  background-image: url(/img/html_logo.ico);
 }
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.css_ico {
+  background-image: url(/img/css_logo.ico);
 }
-.topmenu:after {
-  content: "";
-  display: table;
-  clear: both;
+.js_ico {
+  background-image: url(/img/js_logo.ico);
 }
-.topmenu > li {
+.topmenu {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 20px;
+}
+.submenu-link {
   width: 25%;
-  float: left;
-  position: relative;
-  font-family: 'Open Sans', sans-serif;
-}
-.topmenu > li > a {
-  text-transform: uppercase;
-  font-size: 14px;
-	font-weight: bold;
-	color: #404040;
-  padding: 15px 30px;
-}
-.topmenu li a:hover {color: #D5B45B;}
-.submenu-link:after {
-  content: "\f107";
-  font-family: "FontAwesome";
-  color: inherit;
-  margin-left: 10px;
-}
-.submenu {
-  background: #273037;
-	position: absolute;
-	left: 0;
-	top: 100%;
-	z-index: 5;
-	width: 180px;
-  opacity: 0;
-	transform: scaleY(0);
-	transform-origin :0 0;
-  transition: .5s ease-in-out;
-}
-.submenu a {
-  color: white;
-	text-align: left;
-	padding: 12px 15px;
-	font-size: 13px;
-	border-bottom: 1px solid rgba(255,255,255,.1);
-}
-.submenu li:last-child a {border-bottom: none;}
-.topmenu > li:hover .submenu {
-  opacity: 1;
-	transform: scaleY(1);
+  background-repeat: no-repeat;
+  background-position: center top;
+  text-align: center;
 }
