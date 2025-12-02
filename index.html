@@ -13,32 +13,34 @@
 
 <body>
     <header>
-        <a href="/" rel="home"><img src="/img/code.png" alt="html-css-js.ru" class="logo" width="64" height="64"></a>
+      <div class="header-menu">
+        <a href="/" rel="home"><img src="/img/code.png" alt="html-css-js.ru" class="header-logo" width="64" height="64"></a>
         <nav>
             <ul class="topmenu">
-                <li><a href="/">Главная</a></li>
-                <li class="submenu-link html_ico">HTML
+                <li class="topmenu-link"><a href="/" class="nav-link">Главная</a></li>
+                <li class="topmenu-link">HTML
                     <ul class="submenu">
-                        <li><a href="/html-manual">Учебные материалы HTML</a></li>
-                        <li><a href="/html-features">Полезные фишки</a></li>
+                        <li class="submenu-link"><a href="/html-manual" class="nav-link">Учебные материалы HTML</a></li>
+                        <li class="submenu-link"><a href="/html-features" class="nav-link">Полезные фишки</a></li>
                     </ul>
                 </li>
-                <li class="submenu-link css_ico">CSS
+                <li class="topmenu-link">CSS
                     <ul class="submenu">
-                        <li><a href="/css-manual">Учебные материалы CSS</a></li>
-                        <li><a href="/css-features">Полезные фишки</a></li>
+                        <li class="submenu-link"><a href="/css-manual" class="nav-link">Учебные материалы CSS</a></li>
+                        <li class="submenu-link"><a href="/css-features" class="nav-link">Полезные фишки</a></li>
                     </ul>
                 </li>
-                <li class="submenu-link js_ico">JavaScript
+                <li class="topmenu-link">JavaScript
                     <ul class="submenu">
-                        <li><a href="/js-manual">Учебные материалы JS</a></li>
-                        <li><a href="/js-features">Полезные фишки</a></li>
+                        <li class="submenu-link"><a href="/js-manual" class="nav-link">Учебные материалы JS</a></li>
+                        <li class="submenu-link"><a href="/js-features" class="nav-link">Полезные фишки</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
+      </div>
         <!-- <Поиск по сайту> -->
-        <form>
+      <form class=search>
             <input type="search" name="q" placeholder="Поиск по сайту" />
             <input type="submit" value="Найти" />
         </form>
@@ -61,4 +63,8 @@
             <p>Полезные фишки являются библиотекой созданных или найденных в интернете интересных решений.</p>
         </section>
     </main>
+  <footer>
+    <p>Подвал</p>
+  </footer>
 </body>
+</html>

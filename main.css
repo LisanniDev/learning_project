@@ -1,45 +1,79 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 1;
-}
 body {
   font-family: 'Raleway', sans-serif;
   color: #000000;
   margin: 0;
 }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddd;
+}
+.header-menu {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.header-logo {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.topmenu, .submenu {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.submenu {
+  display: none;
+  position: absolute;
+}
+.topmenu-link {
+  display: inline-block;
+  padding: 20px;
+  background: white;
+  width: 70px;
+  text-align: center;
+}
+.topmenu-link:hover {
+  background: #ddd;
+}
+.topmenu-link:hover .submenu {
+  display: block;
+  margin-top: 20px;
+  margin-left: -20px;
+  box-shadow: 0px 8px 15px 0px rgba(0,0,0,0.2);
+
+}
+.submenu-link {
+  padding: 20px 10px;
+  background: #f9f9f9;
+  text-align: left;
+}
+.submenu-link:hover {
+  background: #ddd;
+}
+
+
+
+/* Удаление оформления ссылок */
+.nav-link {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+.search {
+  padding-right: 20px;
+}
 main {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .post {
     max-width: 60%;
 }
-.html_ico {
-  background-image: url(/img/html_logo.ico);
-}
-.css_ico {
-  background-image: url(/img/css_logo.ico);
-}
-.js_ico {
-  background-image: url(/img/js_logo.ico);
-}
-.topmenu {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  padding: 20px;
-}
-.submenu-link {
-  width: 25%;
-  background-repeat: no-repeat;
-  background-position: center top;
+footer {
+  background-color: #ddd;
+  padding: 5px;
   text-align: center;
 }
