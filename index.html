@@ -14,11 +14,29 @@
 <body>
     <header>
         <a href="/" rel="home"><img src="/img/code.png" alt="html-css-js.ru" class="logo" width="64" height="64"></a>
-        <div class="header_controls">
-            <a href="/html">HTML</a>
-            <a href="/css">CSS</a>
-            <a href="/js">JavaScript</a>
-        </div>
+        <nav>
+            <ul class="topmenu">
+                <li><a href="/">Главная</a></li>
+                <li><a href="/html" class="submenu-link">HTML</a>
+                    <ul class="submenu">
+                        <li><a href="/html/">Справочник</a></li>
+                        <li><a href="/html/">Полезные фишки</a></li>
+                    </ul>
+                </li>
+                <li><a href="/css" class="submenu-link">CSS</a>
+                    <ul class="submenu">
+                        <li><a href="/css/">Справочник</a></li>
+                        <li><a href="/css/">Полезные фишки</a></li>
+                    </ul>
+                </li>
+                <li><a href="/js" class="submenu-link">JavaScript</a>
+                    <ul class="submenu">
+                        <li><a href="/js/">Справочник</a></li>
+                        <li><a href="/js/">Полезные фишки</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
         <!-- <Поиск по сайту> -->
         <form>
             <input type="search" name="q" placeholder="Поиск по сайту" />
