@@ -21,7 +21,9 @@ header {
 .header-logo {
   padding-left: 20px;
   padding-right: 20px;
-  height: 50px;
+}
+.header-menu img {
+  height: 40px;
 }
 .html-link {
   background-image: url(/learning_project/img/html_logo.svg);
