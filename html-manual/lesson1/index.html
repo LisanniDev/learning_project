@@ -5,40 +5,61 @@
     <meta charset="utf-8">
     <meta name="keywords" content="html, css, javascript, js">
     <meta name="description" content="Основы frontend-разработки c использованием HTML, CSS и JavaScript">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Основы HTML+CSS</title>
+    <title>Основы frontend-разработки</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/ico" href="/img/html_logo.ico">
 </head>
 
 <body>
     <header>
-        <a href="/" rel="home"><img src="/img/code.png" alt="html-css-js.ru" class="logo" width="64" height="64"></a>
-        <div class="header_controls">
-            <a href="/html.html">HTML</a>
-            <a href="/css.html">CSS</a>
-            <a href="/js.html">JavaScript</a>
+        <div class="header-menu">
+            <a href="/" rel="home"><img src="/img/code.png" alt="html-css-js.ru" class="header-logo" width="64" height="64"></a>
+            <nav>
+                <ul class="topmenu">
+                    <li class="topmenu-link html-link active">HTML&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/html-manual" class="nav-link">Учебные материалы HTML</a></li>
+                            <li class="submenu-link"><a href="/html-features" class="nav-link">Полезные фишки</a></li>
+                        </ul>
+                    </li>
+                    <li class="topmenu-link">CSS&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/css-manual" class="nav-link">Учебные материалы CSS</a></li>
+                            <li class="submenu-link"><a href="/css-features" class="nav-link">Полезные фишки</a></li>
+                        </ul>
+                    </li>
+                    <li class="topmenu-link">JavaScript&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/js-manual" class="nav-link">Учебные материалы JS</a></li>
+                            <li class="submenu-link"><a href="/js-features" class="nav-link">Полезные фишки</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <form>
+        <!-- <Поиск по сайту> -->
+        <form class=search>
             <input type="search" name="q" placeholder="Поиск по сайту" />
             <input type="submit" value="Найти" />
         </form>
     </header>
     <main>
         <aside>
-            <h1>Содержание</h1>
             <ul>
-                <li><a href="/html.html">HTML</a></li>
+              <li class="active"><a href="/html-manual/lesson1">HTML 1</a></li>
+              <li><a href="/html-manual/lesson1">HTML 2</a></li>
+              <li><a href="/html-manual/lesson1">HTML 3</a></li>
             </ul>
         </aside>
-        <section class="course-theory__content">
-            <h1 class="course-theory__content-heading course-theory__content-heading--synopsis">Основы HTML и CSS</h1>
-            <div class="course-theory__content-text">
+        <section class="content">
+            <h1>Урок 1. Основы HTML и CSS</h1>
+            <div>
                 <h2>HTML</h2>
                 <p>HTML расшифровывается как «Hypertext Markup Language», то есть «язык гипертекстовой разметки».</p>
                 <p>Язык HTML отвечает за структуру и содержание страницы. HTML состоит из тегов,
-                    а тег состоит из имени, заключённого между знаками «меньше» и «больше». Примеры тегов: 
-                    <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>.</p>
+                    а тег состоит из имени, заключённого между знаками «меньше» и «больше». Примеры тегов:
+                    <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>.
+                </p>
                 <h3>Парные теги</h3>
                 <p>Теги бывают парными и одиночными. Парные теги могут содержать текст и другие теги.
                     У парных тегов, в отличие от одиночных, есть вторая половинка — закрывающий тег:</p>
@@ -46,11 +67,14 @@
                 <p>В закрывающей части парных тегов перед именем ставится символ <code>/</code> («слэш»).</p>
                 <p>В парные теги можно вкладывать другие теги. Например, как в списках:</p>
                 <pre><code>&lt;ul&gt;&lt;li&gt;Элемент списка&lt;/li&gt;&lt;/ul&gt;</code></pre>
-                <p>У вложенных тегов всегда нужно следить за правильным порядком закрытия. Вложенный тег не может закрываться позже родительского:</p>
+                <p>У вложенных тегов всегда нужно следить за правильным порядком закрытия. Вложенный тег не может
+                    закрываться позже родительского:</p>
                 <pre><code>&lt;ul&gt;&lt;li&gt;Элемент списка&lt;/ul&gt;&lt;/li&gt; &lt;!-- Плохо  --&gt;&lt;ul&gt;&lt;li&gt;Элемент списка&lt;/li&gt;&lt;/ul&gt; &lt;!-- Хорошо --&gt;</code></pre>
-                <p>Не все теги можно вкладывать в другие теги, например, тег <code>&lt;h1&gt;</code> нельзя вкладывать в <code>&lt;p&gt;</code>.</p>
+                <p>Не все теги можно вкладывать в другие теги, например, тег <code>&lt;h1&gt;</code> нельзя вкладывать в
+                    <code>&lt;p&gt;</code>.</p>
                 <h3>Одиночные теги</h3>
-                <p>Существуют не только парные, но и одиночные теги. Например, тег <code>&lt;img&gt;</code> позволяет добавить картинку в разметку.</p>
+                <p>Существуют не только парные, но и одиночные теги. Например, тег <code>&lt;img&gt;</code> позволяет
+                    добавить картинку в разметку.</p>
                 <p>Сам по себе <code>&lt;img&gt;</code> не имеет смысла. Чтобы этот тег был действительно
                     полезен, необходимо написать внутри него адрес, ведущий к картинке. Делается это с помощью
                     атрибута <code>src</code>:</p>
@@ -69,7 +93,8 @@
                 <p>CSS расшифровывается как «Cascading Style Sheets», то есть «каскадные таблицы стилей».</p>
                 <p>Язык CSS отвечает за внешний вид страницы.</p>
                 <p>С помощью CSS можно задавать параметры для любого тега: ширину и высоту, отступы, цвет
-                    и размер шрифта, фон и так далее. Все эти параметры задаются с помощью свойств в следующем формате:</p>
+                    и размер шрифта, фон и так далее. Все эти параметры задаются с помощью свойств в следующем формате:
+                </p>
                 <pre><code>свойство: значение;</code></pre>
                 <p>Например:</p>
                 <pre><code>color: red;
@@ -89,11 +114,13 @@ padding: 10px;</code></pre>
 }</code></pre>
                 <p>Задавать стили можно не только с помощью атрибута <code>class</code>,
                     но и по тегам. Селектор указывает, к каким тегам применятся свойства
-                    из CSS-правила. Селекторы по тегам работают проще всего: они выбирают все теги с подходящим именем.</p>
+                    из CSS-правила. Селекторы по тегам работают проще всего: они выбирают все теги с подходящим именем.
+                </p>
                 <pre><code>p { color: red; }</code></pre>
                 <p>В примере селектором является <code>p</code>, и он выбирает все теги с именем
                     <code>p</code> (то есть теги <code>&lt;p&gt;</code>), а теги с другим именем,
-                    например <code>h1</code>, не выбирает.</p>
+                    например <code>h1</code>, не выбирает.
+                </p>
                 <p>Когда же стилизация задаётся по классам, то стили применяются только к тегам
                     с такими классами.</p>
                 <pre><code>.название_класса {
@@ -106,16 +133,19 @@ padding: 10px;</code></pre>
 &lt;li class="product hit"&gt;Товар, а ещё хит продаж&lt;/li&gt;
 &lt;li class="product hit sale"&gt;Товар, хит продаж и со ски-и-идкой!&lt;/li&gt;
 </code></pre>
-                <p>Обычно миксование используют так: в один класс выносят общее оформление, а в дополнительных классах описывают его модификации.</p>
+                <p>Обычно миксование используют так: в один класс выносят общее оформление, а в дополнительных классах
+                    описывают его модификации.</p>
                 <h3>Комментарии</h3>
                 <p>В CSS тоже существуют комментарии, их отличие от HTML-комментариев в том, что код
                     или подсказки пишутся между символами <code>/* и */</code>.</p>
             </div>
         </section>
-
-
-
+        <div class="right-block">
+          
+        </div>
     </main>
+    <footer>
+        <p>Подвал</p>
+    </footer>
 </body>
-
-
+</html>
