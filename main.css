@@ -25,18 +25,6 @@ header {
 .header-menu img {
   height: 40px;
 }
-.html-link {
-  background-image: url(/learning_project/img/html_logo.svg);
-  background-size: contain;
-}
-.css-link {
-  background-image: url(/learning_project/img/css_logo.svg);
-  background-size: contain;
-}
-.js-link {
-  background-image: url(/learning_project/img/js_logo.svg);
-  background-size: contain;
-}
 .topmenu, .submenu {
   list-style: none;
   margin: 0;
@@ -48,12 +36,10 @@ header {
 }
 .topmenu-link {
   display: inline-block;
-  padding: 20px;
   margin: 0;
   background: #ddd;
   min-width: 100px;
   text-align: center;
-  font-size: 16px;
 }
 .topmenu-link:hover {
   background: #e1e5ac;
