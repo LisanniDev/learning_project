@@ -7,34 +7,36 @@
     <meta name="description" content="Основы frontend-разработки c использованием HTML, CSS и JavaScript">
     <title>Основы frontend-разработки</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="icon" type="image/ico" href="/img/html_logo.ico">
+    <link rel="icon" type="image/ico" href="/learning_project/img/html_logo.ico">
 </head>
 
 <body>
     <header>
-        <nav class="header-menu">
-            <ul class="topmenu">
-                <li class="topmenu-link"><a href="/" class="nav-link">Главная</a></li>
-                <li class="topmenu-link">HTML&#9660;
-                    <ul class="submenu">
-                        <li class="submenu-link"><a href="/html-manual" class="nav-link">Учебные материалы HTML</a></li>
-                        <li class="submenu-link"><a href="/html-features" class="nav-link">Полезные фишки</a></li>
-                    </ul>
-                </li>
-                <li class="topmenu-link">CSS&#9660;
-                    <ul class="submenu">
-                        <li class="submenu-link"><a href="/css-manual" class="nav-link">Учебные материалы CSS</a></li>
-                        <li class="submenu-link"><a href="/css-features" class="nav-link">Полезные фишки</a></li>
-                    </ul>
-                </li>
-                <li class="topmenu-link">JavaScript&#9660;
-                    <ul class="submenu">
-                        <li class="submenu-link"><a href="/js-manual" class="nav-link">Учебные материалы JS</a></li>
-                        <li class="submenu-link"><a href="/js-features" class="nav-link">Полезные фишки</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-menu">
+            <a href="/learning_project" rel="home"><img src="/learning_project/img/code.png" alt="html-css-js.ru" class="header-logo" width="64" height="64"></a>
+            <nav>
+                <ul class="topmenu">
+                    <li class="topmenu-link html-link">HTML&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные материалы HTML</a></li>
+                            <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные фишки</a></li>
+                        </ul>
+                    </li>
+                    <li class="topmenu-link">CSS&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные материалы CSS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные фишки</a></li>
+                        </ul>
+                    </li>
+                    <li class="topmenu-link">JavaScript&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные материалы JS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные фишки</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <!-- <Поиск по сайту> -->
         <form class=search>
             <input type="search" name="q" placeholder="Поиск по сайту" />
