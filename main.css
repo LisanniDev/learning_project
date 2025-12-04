@@ -21,6 +21,19 @@ header {
 .header-logo {
   padding-left: 20px;
   padding-right: 20px;
+  height: 50px;
+}
+.html-link {
+  background-image: url(/learning_project/img/html_logo.svg);
+  background-size: contain;
+}
+.css-link {
+  background-image: url(/learning_project/img/css_logo.svg);
+  background-size: contain;
+}
+.js-link {
+  background-image: url(/learning_project/img/js_logo.svg);
+  background-size: contain;
 }
 .topmenu, .submenu {
   list-style: none;
