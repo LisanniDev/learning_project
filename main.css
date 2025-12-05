@@ -21,8 +21,9 @@ header {
 .header-logo {
   padding-left: 20px;
   padding-right: 50px;
+  height: 60px;
 }
-.header-menu img {
+.topmenu img {
   height: 40px;
 }
 .topmenu, .submenu {
