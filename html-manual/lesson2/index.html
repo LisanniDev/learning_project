@@ -13,25 +13,33 @@
 <body>
     <header>
         <div class="header-menu">
-            <a href="/learning_project" rel="home"><img src="/learning_project/img/main_logo.svg" alt="html-css-js.ru" class="header-logo"></a>
+            <a href="/learning_project" rel="home"><img src="/learning_project/img/main_logo.svg" alt="html-css-js.ru"
+                    class="header-logo"></a>
             <nav>
                 <ul class="topmenu">
-                    <li class="topmenu-link active"><img src="/learning_project/img/html_logo.svg" alt="HTML"><br>HTML&#9660;
+                    <li class="topmenu-link active"><img src="/learning_project/img/html_logo.svg"
+                            alt="HTML"><br>HTML&#9660;
                         <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные материалы HTML</a></li>
-                            <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные фишки</a></li>
+                            <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные
+                                    материалы HTML</a></li>
+                            <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные
+                                    фишки</a></li>
                         </ul>
                     </li>
                     <li class="topmenu-link"><img src="/learning_project/img/css_logo.svg" alt="СSS"><br>CSS&#9660;
                         <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные материалы CSS</a></li>
-                            <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные фишки</a></li>
+                            <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные
+                                    материалы CSS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные
+                                    фишки</a></li>
                         </ul>
                     </li>
                     <li class="topmenu-link"><img src="/learning_project/img/js_logo.svg" alt="JS"><br>JavaScript&#9660;
                         <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные материалы JS</a></li>
-                            <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные фишки</a></li>
+                            <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные
+                                    материалы JS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные
+                                    фишки</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -46,106 +54,95 @@
     <main>
         <aside>
             <ul>
-              <li><a href="/learning_project/html-manual/lesson1">HTML 1</a></li>
-              <li class="active"><a href="/learning_project/html-manual/lesson2">HTML 2</a></li>
-              <li><a href="/learning_project/html-manual/lesson3">HTML 3</a></li>
+                <li><a href="/learning_project/html-manual/lesson1">HTML 1</a></li>
+                <li class="active"><a href="/learning_project/html-manual/lesson2">HTML 2</a></li>
+                <li><a href="/learning_project/html-manual/lesson3">HTML 3</a></li>
             </ul>
         </aside>
         <section class="content">
-            <h1>Урок 2. Основы HTML и CSS</h1>
+            <h1>Урок 2. Структура HTML-документа</h1>
             <div>
-                <h2>HTML</h2>
-                <p>HTML расшифровывается как «Hypertext Markup Language», то есть «язык гипертекстовой разметки».</p>
-                <p>Язык HTML отвечает за структуру и содержание страницы. HTML состоит из тегов,
-                    а тег состоит из имени, заключённого между знаками «меньше» и «больше». Примеры тегов:
-                    <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>.
-                </p>
-                <h3>Парные теги</h3>
-                <p>Теги бывают парными и одиночными. Парные теги могут содержать текст и другие теги.
-                    У парных тегов, в отличие от одиночных, есть вторая половинка — закрывающий тег:</p>
-                <pre><code>&lt;h1&gt;Текст заголовка<mark>&lt;/h1&gt;</mark></code></pre>
-                <p>В закрывающей части парных тегов перед именем ставится символ <code>/</code> («слэш»).</p>
-                <p>В парные теги можно вкладывать другие теги. Например, как в списках:</p>
-                <pre><code>&lt;ul&gt;&lt;li&gt;Элемент списка&lt;/li&gt;&lt;/ul&gt;</code></pre>
-                <p>У вложенных тегов всегда нужно следить за правильным порядком закрытия. Вложенный тег не может
-                    закрываться позже родительского:</p>
-                <pre><code>&lt;ul&gt;&lt;li&gt;Элемент списка&lt;/ul&gt;&lt;/li&gt; &lt;!-- Плохо  --&gt;&lt;ul&gt;&lt;li&gt;Элемент списка&lt;/li&gt;&lt;/ul&gt; &lt;!-- Хорошо --&gt;</code></pre>
-                <p>Не все теги можно вкладывать в другие теги, например, тег <code>&lt;h1&gt;</code> нельзя вкладывать в
-                    <code>&lt;p&gt;</code>.</p>
-                <h3>Одиночные теги</h3>
-                <p>Существуют не только парные, но и одиночные теги. Например, тег <code>&lt;img&gt;</code> позволяет
-                    добавить картинку в разметку.</p>
-                <p>Сам по себе <code>&lt;img&gt;</code> не имеет смысла. Чтобы этот тег был действительно
-                    полезен, необходимо написать внутри него адрес, ведущий к картинке. Делается это с помощью
-                    атрибута <code>src</code>:</p>
-                <pre><code>&lt;img src="keks.png"&gt;</code></pre>
-                <p>У тега может быть несколько атрибутов. В этом случае они пишутся через пробел:</p>
-                <pre><code>&lt;тег атрибут1="значение1" атрибут2="значение2"&gt;</code></pre>
-                <p>Например, картинке при желании можно задать размеры:</p>
-                <pre><code>&lt;img src="keks.png" width="200" height="100"&gt;</code></pre>
-                <h3>Комментарии</h3>
-                <p>Код, заключённый между символами <code>&lt;!--</code> и <code>--&gt;</code>, работать
-                    не будет. Если эти символы удалить, то код заработает, это называется «раскомментировать».
-                    С помощью комментариев обычно <em>временно</em> отключают какой-то код или оставляют подсказки
-                    и разъяснения.</p>
-                <pre><code>&lt;!-- Это комментарий в HTML --&gt;</code></pre>
-                <h2>CSS</h2>
-                <p>CSS расшифровывается как «Cascading Style Sheets», то есть «каскадные таблицы стилей».</p>
-                <p>Язык CSS отвечает за внешний вид страницы.</p>
-                <p>С помощью CSS можно задавать параметры для любого тега: ширину и высоту, отступы, цвет
-                    и размер шрифта, фон и так далее. Все эти параметры задаются с помощью свойств в следующем формате:
-                </p>
-                <pre><code>свойство: значение;</code></pre>
-                <p>Например:</p>
-                <pre><code>color: red;
-padding: 10px;</code></pre>
-                <p>Стили к тегам добавляются чаще всего при помощи атрибута <code>class</code>.</p>
-                <p>Например, если мы хотим, чтобы определённые стили, описанные, допустим, в классе
-                    <code>feature-kitten</code>, применились к тегу &lt;p&gt;, то в разметке напишем так:
-                </p>
-                <pre><code></code>&lt;p class="feature-kitten"&gt;...&lt;/p&gt;</pre>
-                <h3>CSS-правила</h3>
-                <p>Можно сказать, что CSS-правило — это группа свойств и их значений, которая целиком
-                    применяется к тем тегам, на которые указывает селектор.</p>
-                <p>И выглядит это так:</p>
-                <pre><code>селектор {
-  свойство1: значение;
-  свойство2: значение;
-}</code></pre>
-                <p>Задавать стили можно не только с помощью атрибута <code>class</code>,
-                    но и по тегам. Селектор указывает, к каким тегам применятся свойства
-                    из CSS-правила. Селекторы по тегам работают проще всего: они выбирают все теги с подходящим именем.
-                </p>
-                <pre><code>p { color: red; }</code></pre>
-                <p>В примере селектором является <code>p</code>, и он выбирает все теги с именем
-                    <code>p</code> (то есть теги <code>&lt;p&gt;</code>), а теги с другим именем,
-                    например <code>h1</code>, не выбирает.
-                </p>
-                <p>Когда же стилизация задаётся по классам, то стили применяются только к тегам
-                    с такими классами.</p>
-                <pre><code>.название_класса {
-  свойство: значение;
-}</code></pre>
-                <h3>Миксование классов</h3>
-                <p>У HTML-элемента может быть сколько угодно классов, в этом случае они перечисляются
-                    в атрибуте <code>class</code> через пробел, например:</p>
-                <pre><code>&lt;li class="product"&gt;Товар&lt;/li&gt;
-&lt;li class="product hit"&gt;Товар, а ещё хит продаж&lt;/li&gt;
-&lt;li class="product hit sale"&gt;Товар, хит продаж и со ски-и-идкой!&lt;/li&gt;
+                <p>Каждый HTML-документ начинается с декларации типа документа или «доктайпа». Тип документа
+                    необходим, чтобы браузер мог определить версию HTML и правильно отобразить страницу.</p>
+                <pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+                <p>Простейшая HTML-страница состоит как минимум из трёх тегов: <code>&lt;html&gt;</code>,
+                    <code>&lt;head&gt;</code> и <code>&lt;body&gt;</code>. Тег <code>&lt;head&gt;</code> обычно
+                    содержит заголовок, ключевые слова, описание страницы и другие служебные данные. Также внутри
+                    него подключаются внешние ресурсы, например, стили. Содержимое этого тега не отображается
+                    на странице напрямую. А в теге <code>&lt;body&gt;</code> хранится содержание
+                    страницы, которое отображается в окне браузера.</p>
+                <p>Для подключения стилей к странице существует тег <code>&lt;link&gt;</code>. Для этого
+                    у него есть атрибут <code>href</code> в котором задаётся адрес стилевого файла,
+                    а значение <code>stylesheet</code> атрибута <code>rel</code> говорит браузеру, что
+                    мы подключаем именно стили, а не что-то другое.</p>
+                <pre><code>&lt;head&gt;
+  &lt;link href="адрес_файла_стилей.css" rel="stylesheet"&gt;
+&lt;/head&gt;
 </code></pre>
-                <p>Обычно миксование используют так: в один класс выносят общее оформление, а в дополнительных классах
-                    описывают его модификации.</p>
-                <h3>Комментарии</h3>
-                <p>В CSS тоже существуют комментарии, их отличие от HTML-комментариев в том, что код
-                    или подсказки пишутся между символами <code>/* и */</code>.</p>
+                <p>Ещё один элемент, который располагается в <code>&lt;head&gt;</code> — это тег
+                    <code>&lt;title&gt;</code>. В нём задаётся заголовок страницы, который отображается
+                    во вкладках браузера. По заголовку должно быть понятно, о чём эта страница, даже
+                    когда она не открыта в браузере, а отображается в результатах поиска или
+                    в браузерных закладках.</p>
+                <pre><code>&lt;head&gt;
+  &lt;title&gt;Тренажёры — HTML Academy&lt;/title&gt;<code>
+&lt;/head&gt;</code></code></pre>
+                <p>Ещё один важный тег, располагающийся внутри <code>&lt;head&gt;</code> это тег
+                    <code>&lt;meta&gt;</code>. Он одиночный, то есть не требует парный закрывающий тег
+                    в конце. С помощью <code>&lt;meta&gt;</code> можно сообщать браузеру, поисковому роботу
+                    или другому устройству различную служебную информацию (или метаинформацию) о вашем сайте:
+                    кодировку текста, описание контента и так далее. Для этого используются теги
+                    <code>&lt;meta&gt;</code> с разными атрибутами и их значениями.</p>
+                <p>Кодировка текста HTML-страницы указывается с помощью атрибута <code>charset</code>:</p>
+                <pre><code>&lt;meta charset="название кодировки"&gt;</code></pre>
+                <p>Самая распространённая современная кодировка — <code>utf-8</code>.</p>
+                <p>Перечень ключевых слов задаётся тегом <code>&lt;meta&gt;</code>, у которого атрибут
+                    <code>name</code> имеет значение <code>keywords</code>. Ключевые слова (самые важные слова
+                    из содержания страницы) перечисляются в атрибуте <code>content</code> через запятую:</p>
+                <pre><code>&lt;meta name="keywords" content="важные, ключевые, слова"&gt;</code></pre>
+                <p>Краткое описание (или аннотация) страницы задаётся похожим образом, только значение атрибута
+                    <code>name</code> меняется на <code>description</code>:</p>
+                <pre><code>&lt;meta name="description" content="краткое описание"&gt;</code></pre>
+                <p>Внутри <code>&lt;body&gt;</code> находятся те теги, которые отображаются на странице.
+                    Например, тег <code>&lt;main&gt;</code> выделяет основное содержание страницы, которое
+                    не повторяется на других страницах. И обычно на странице используется один
+                    <code>&lt;main&gt;</code>.</p>
+                <p>Тег <code>&lt;header&gt;</code> содержит вводную часть страницы, которую чаще называют «шапкой»,
+                    а тег <code>&lt;footer&gt;</code> описывает заключительную часть страницы, или «подвал».
+                    Существует тег <code>&lt;section&gt;</code>, который обозначает крупный смысловой (или «логический»)
+                    раздел.</p>
+                <p>Тег <code>&lt;article&gt;</code>, обозначает цельный, законченный и самостоятельный фрагмент
+                    информации. </p>
+                <p>Для создания логического раздела с основной навигацией предназначен тег <code>&lt;nav&gt;</code>
+                    (сокращение от английского «navigation»). Обычно в <code>&lt;nav&gt;</code> включают
+                    ссылки на другие страницы или навигацию по текущей странице.</p>
+                <p>Тег <code>&lt;aside&gt;</code> включает в себя дополнительное содержание, не связанное
+                    напрямую с основным. Такие блоки ещё часто называют «сайдбарами» или боковыми панелями.</p>
+                <p>Для создания основной структуры текста используют заголовки. В HTML существует целое семейство
+                    заголовочных тегов: от <code>&lt;h1&gt;</code> до <code>&lt;h6&gt;</code>. Тег
+                    <code>&lt;h1&gt;</code> обозначает самый важный заголовок (заголовок верхнего уровня), а тег
+                    <code>&lt;h6&gt;</code> обозначает подзаголовок самого нижнего уровня.</p>
+                <pre><code>&lt;h1&gt;Спецификация HTML&lt;/h1&gt;
+&lt;h2&gt;Раздел 1 Введение&lt;/h2&gt;
+&lt;h3&gt;Раздел 1.1 Происхождение языка&lt;/h3&gt;</code></pre>
+                <p>Основную структуру текста создают с помощью заголовков, а более мелкую выстраивают
+                    с помощью параграфов (или абзацев). Для разметки параграфов предназначен тег
+                    <code>&lt;p&gt;</code>. По умолчанию абзацы начинаются с новой строки и отделяются
+                    от остального контента отступами сверху и снизу. </p><br><a href="/courses/299/run/18"><svg
+                        aria-hidden="true">
+                        <use xlink:href="#icon-check-bold"></use>
+                    </svg>
+                    Продолжить
+                </a>
             </div>
         </section>
         <div class="right-block">
-          
+
         </div>
     </main>
     <footer>
         <p>Подвал</p>
     </footer>
 </body>
+
 </html>

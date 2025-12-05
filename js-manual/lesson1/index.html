@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="html, css, javascript, js">
+    <meta name="description" content="Основы frontend-разработки c использованием HTML, CSS и JavaScript">
+    <title>Основы frontend-разработки</title>
+    <link rel="stylesheet" href="/learning_project/main.css">
+    <link rel="icon" type="image/ico" href="/learning_project/img/html_logo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="header-menu">
+            <a href="/learning_project" rel="home"><img src="/learning_project/img/main_logo.svg" alt="html-css-js.ru"
+                    class="header-logo"></a>
+            <nav>
+                <ul class="topmenu">
+                    <li class="topmenu-link"><img src="/learning_project/img/html_logo.svg" alt="HTML"><br>HTML&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные
+                                    материалы HTML</a></li>
+                            <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные
+                                    фишки</a></li>
+                        </ul>
+                    </li>
+                    <li class="topmenu-link"><img src="/learning_project/img/css_logo.svg" alt="СSS"><br>CSS&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные
+                                    материалы CSS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные
+                                    фишки</a></li>
+                        </ul>
+                    </li>
+                    <li class="topmenu-link active"><img src="/learning_project/img/js_logo.svg"
+                            alt="JS"><br>JavaScript&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные
+                                    материалы JS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные
+                                    фишки</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- <Поиск по сайту> -->
+        <form class=search>
+            <input type="search" name="q" placeholder="Поиск по сайту" />
+            <input type="submit" value="Найти" />
+        </form>
+    </header>
+    <main>
+        <aside>
+            <ul>
+                <li class="active"><a href="/learning_project/html-manual/lesson1">HTML 1</a></li>
+                <li><a href="/learning_project/html-manual/lesson2">HTML 2</a></li>
+                <li><a href="/learning_project/html-manual/lesson3">HTML 3</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <h1>Урок 1. Основы JavaScript</h1>
+            <div>
+                <h2>JavaScript: что это такое и как подключить его на страницу</h2>
+                <p>Язык программирования JavaScript придумали специально для того, чтобы создавать интерактивные
+                    сайты.</p>
+                <p>Код на языке JavaScript называют скриптом. Его сохраняют в&nbsp;отдельный файл с расширением
+                    <code>js</code>, а чтобы запустить, подключают этот файл на страницу. В HTML для добавления
+                    JavaScript есть специальный тег:
+                </p>
+                <pre><code>&lt;script src="адрес_файла"&gt;&lt;/script&gt;</code></pre>
+                <p>Подключают скрипт обычно в самом конце страницы, перед закрывающим тегом
+                    <code>&lt;/body&gt;</code>.
+
+                </p>
+                <p>Программа на JavaScript — это последовательность инструкций, то есть указаний браузеру выполнить
+                    какие-то действия. Инструкции выполняются последовательно, сверху вниз.</p>
+                <p>Чтобы сказать JavaScript, что инструкция закончена, нужно поставить точку с запятой или перейти
+                    на новую строку. Новая строка правильно работает <i>в большинстве случаев</i>, а точка с запятой
+                    — <b>всегда</b>. Поэтому лучше ставить точку с запятой в конце каждой инструкции.</p>
+                <p>JavaScript не меняет исходный файл с разметкой, но, выполняя инструкции, меняет страницу прямо в
+                    браузере пользователя.</p>
+                <h2>Комментарии</h2>
+                <p>Комментарий — это текст, поясняющий код. Он не выводится в браузер и никак не влияет на работу
+                    программы. Инструкции внутри комментария не выполняются, поэтому комментарии часто используют,
+                    если нужно временно отключить часть кода.</p>
+                <p>В JavaScript есть два вида комментариев:</p>
+                <pre><code>// Однострочные комментарии.
+
+/*
+И многострочные.
+Они могут отключить сразу несколько строк кода.
+*/</code></pre>
+                <h2>Метод querySelector</h2>
+                <p>Чтобы найти на странице элемент, нужно использовать метод <code>querySelector</code>, он ищет по
+                    селектору:</p>
+                <pre><code>document.querySelector('селектор');</code></pre>
+                <p>Эта инструкция состоит из двух частей. Первая часть — элемент, внутри которого будет искать
+                    JavaScript. Словом
+                    <code>document</code> обозначается веб-страница, к которой скрипт подключён. Неважно, как
+                    называется файл на самом деле, в JavaScript это всегда «документ». Он является
+                    элементом-родителем для любого другого элемента на странице.
+                </p>
+                <p>Вторая часть инструкции — это то, что нужно сделать. Её называют методом.</p>
+                <h2>Консоль</h2>
+                <p>Консоль — инструмент разработчика, который помогает тестировать код. Если во время выполнения
+                    скрипта возникнет ошибка, в консоли появится сообщение о ней. А ещё в консоль можно выводить
+                    текстовые подсказки. Чтобы вывести сообщение в консоль, нужно использовать <code
+                        class="nowrap">console.log</code>:</p>
+                <pre><code>console.log('Привет от JavaScript!');
+// Выведет: Привет от JavaScript!
+
+console.log(document.querySelector('.page'));
+// Выведет в консоль найденный элемент</code></pre>
+                <h2>Переменная</h2>
+                <p>Переменная — способ сохранить данные, дав им понятное название.</p>
+                <p>Переменную можно создать, или <b>объявить</b>, с помощью ключевого слова <code>let</code>. За ним
+                    следует имя переменной. После объявления в переменную нужно записать, или <b>присвоить</b>,
+                    какое-то значение:</p>
+                <pre><code>let header = document.querySelector('header');</code></pre>
+                <p>Имя переменной может быть почти любым, но не должно начинаться с цифры, а из спецсимволов
+                    разрешены только '_' и '$'.
+                    Ещё для именования переменных нельзя использовать <a
+                        href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Lexical_grammar#%D0%9A%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D1%8B%D0%B5_%D1%81%D0%BB%D0%BE%D0%B2%D0%B0"
+                        target="_blank" rel="nofollow noopener">зарезервированные слова</a>. Имена переменных
+                    чувствительны к регистру: <code>header</code>, <code>Header</code> и <code>HEADER</code> — это
+                    разные переменные. Имя переменной должно описывать то, что в ней хранится.</p>
+                <p>Когда в коде встречается переменная, браузер вместо её имени подставляет присвоенное ей значение.
+                    Когда мы используем переменную, снова писать <code>let</code> не нужно:</p>
+                <pre><code>console.log(<mark>header</mark>);</code></pre>
+                <p>Ключевое слово <code>let</code> появилось в JavaScript в 2015 году, до этого для объявления
+                    переменных использовалось слово <code>var</code>.</p>
+                <h2>Методы для изменения классов</h2>
+                <p>Чтобы убрать у элемента класс, нужно использовать метод <code class="nowrap">classList.remove</code>.
+                    Он убирает с элемента тот класс, который указан в
+                    скобках:</p>
+                <pre><code>элемент.classList.remove('класс');</code></pre>
+                <p>Чтобы добавить элементу класс, нужно использовать метод <code class="nowrap">classList.add</code>:
+                </p>
+                <pre><code>элемент.classList.add('класс');</code></pre>
+                <p>Метод-переключатель <code class="nowrap">classList.toggle</code> убирает у элемента указанный
+                    класс, если он есть, и добавляет, если этого класса нет:</p>
+                <pre><code>элемент.classList.toggle('класс');</code></pre>
+                <h2>Свойство textContent</h2>
+                <p>У каждого элемента имеется множество свойств: его размеры, цвет и так далее. Свойство
+                    <code>textContent</code> хранит в себе текстовое содержимое элемента. Свойствам можно
+                    присваивать новые значения:
+                </p>
+                <pre><code>let paragraph = document.querySelector('p');
+<mark>paragraph.textContent</mark> = 'Здесь был Кекс. Мяу!';</code></pre>
+                <h2>Свойство value</h2>
+                <p>У полей ввода есть особое свойство — <code>value</code>. Оно хранит данные, введённые в поле. Мы
+                    можем вывести их прямо на страницу:</p>
+                <pre><code>let input = document.querySelector('input');
+paragraph.textContent = <mark>input.value</mark>;</code></pre>
+                <h2>Конкатенация</h2>
+                <p>Операция, когда мы «склеиваем» несколько значений, называется <b>конкатенацией</b> и в JavaScript
+                    выполняется с помощью знака плюс.</p>
+                <pre><code>let name = 'Кекс';
+paragraph.textContent = 'Вас зовут ' <mark>+</mark> name <mark>+</mark> '. Хорошего дня!';
+console.log(paragraph.textContent);
+// Выведет: Вас зовут Кекс. Хорошего дня!</code></pre>
+                <h2>Обработчики событий onclick и onsubmit</h2>
+                <p>JavaScript следит за всем, что происходит на странице. Клик по кнопке или отправка формы — это
+                    <i>событие</i>. Мы можем сказать JavaScript, что сделать, когда некое событие произойдёт. Для
+                    этого используют обработчики событий. Инструкции, которые должны будут выполниться, когда
+                    событие произойдёт, располагают между фигурных скобок.
+                </p>
+                <p>Свойство <code>onclick</code> означает «по клику»:</p>
+                <pre><code>let button = document.querySelector('button');
+button.<mark>onclick</mark> = function() {
+  console.log('Кнопка нажата!');
+};</code></pre>
+                <p>При каждом клике по кнопке в консоли будет появляться новое сообщение
+                    <code>Кнопка нажата!</code>.
+                </p>
+                <p>За обработку отправки формы отвечает свойство <code>onsubmit</code>:</p>
+                <pre><code>let form = document.querySelector('form');
+form.<mark>onsubmit</mark> = function() {
+  console.log('Форма отправлена!');
+};</code></pre>
+                <p>После отправки формы в консоли появится сообщение <code>Форма отправлена!</code>.</p><br><a
+                    href="/courses/343"><svg aria-hidden="true">
+                        <use xlink:href="#icon-check-bold"></use>
+                    </svg>
+                    Продолжить
+                </a>
+            </div>
+        </section>
+        <div class="right-block">
+
+        </div>
+    </main>
+    <footer>
+        <p>Подвал</p>
+    </footer>
+</body>
+
+</html>

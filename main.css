@@ -92,6 +92,7 @@ aside, .right-block {
   padding: 20px;
   background-color: white;
 }
+
 /*Настройки стилей основного тела статьи*/
 .content h1 {
   font-size: 25px;
@@ -107,6 +108,8 @@ aside, .right-block {
   align-items: streth;
   max-width: 100%;
 }
+
+/*Настройка плиток*/
 .panel {
   text-decoration: none;
   color: black;
