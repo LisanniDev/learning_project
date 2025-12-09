@@ -54,9 +54,7 @@
     <main>
         <aside>
             <ul>
-                <li class="active"><a href="/learning_project/html-manual/lesson1">HTML 1</a></li>
-                <li><a href="/learning_project/html-manual/lesson2">HTML 2</a></li>
-                <li><a href="/learning_project/html-manual/lesson3">HTML 3</a></li>
+                <li class="active"><a href="/learning_project/js-manual/lesson1">Урок 1. Основы JavaScript</a></li>
             </ul>
         </aside>
         <section class="content">
@@ -65,11 +63,13 @@
                 <h2>JavaScript: что это такое и как подключить его на страницу</h2>
                 <p>Язык программирования JavaScript придумали специально для того, чтобы создавать интерактивные
                     сайты.</p>
-                <p>Код на языке JavaScript называют скриптом. Его сохраняют в&nbsp;отдельный файл с расширением
+                <p>Код на языке JavaScript называют скриптом. Его сохраняют в отдельный файл с расширением
                     <code>js</code>, а чтобы запустить, подключают этот файл на страницу. В HTML для добавления
                     JavaScript есть специальный тег:
                 </p>
-                <pre><code>&lt;script src="адрес_файла"&gt;&lt;/script&gt;</code></pre>
+                <pre>
+<code>&lt;script src="адрес_файла"&gt;&lt;/script&gt;</code>
+</pre>
                 <p>Подключают скрипт обычно в самом конце страницы, перед закрывающим тегом
                     <code>&lt;/body&gt;</code>.
 
@@ -86,16 +86,20 @@
                     программы. Инструкции внутри комментария не выполняются, поэтому комментарии часто используют,
                     если нужно временно отключить часть кода.</p>
                 <p>В JavaScript есть два вида комментариев:</p>
-                <pre><code>// Однострочные комментарии.
+                <pre>
+<code>// Однострочные комментарии.
 
 /*
 И многострочные.
 Они могут отключить сразу несколько строк кода.
-*/</code></pre>
+*/</code>
+</pre>
                 <h2>Метод querySelector</h2>
                 <p>Чтобы найти на странице элемент, нужно использовать метод <code>querySelector</code>, он ищет по
                     селектору:</p>
-                <pre><code>document.querySelector('селектор');</code></pre>
+                <pre>
+<code>document.querySelector('селектор');</code>
+</pre>
                 <p>Эта инструкция состоит из двух частей. Первая часть — элемент, внутри которого будет искать
                     JavaScript. Словом
                     <code>document</code> обозначается веб-страница, к которой скрипт подключён. Неважно, как
@@ -108,17 +112,21 @@
                     скрипта возникнет ошибка, в консоли появится сообщение о ней. А ещё в консоль можно выводить
                     текстовые подсказки. Чтобы вывести сообщение в консоль, нужно использовать <code
                         class="nowrap">console.log</code>:</p>
-                <pre><code>console.log('Привет от JavaScript!');
+                <pre>
+<code>console.log('Привет от JavaScript!');
 // Выведет: Привет от JavaScript!
 
 console.log(document.querySelector('.page'));
-// Выведет в консоль найденный элемент</code></pre>
+// Выведет в консоль найденный элемент</code>
+</pre>
                 <h2>Переменная</h2>
                 <p>Переменная — способ сохранить данные, дав им понятное название.</p>
                 <p>Переменную можно создать, или <b>объявить</b>, с помощью ключевого слова <code>let</code>. За ним
                     следует имя переменной. После объявления в переменную нужно записать, или <b>присвоить</b>,
                     какое-то значение:</p>
-                <pre><code>let header = document.querySelector('header');</code></pre>
+                <pre>
+<code>let header = document.querySelector('header');</code>
+</pre>
                 <p>Имя переменной может быть почти любым, но не должно начинаться с цифры, а из спецсимволов
                     разрешены только '_' и '$'.
                     Ещё для именования переменных нельзя использовать <a
@@ -128,39 +136,53 @@ console.log(document.querySelector('.page'));
                     разные переменные. Имя переменной должно описывать то, что в ней хранится.</p>
                 <p>Когда в коде встречается переменная, браузер вместо её имени подставляет присвоенное ей значение.
                     Когда мы используем переменную, снова писать <code>let</code> не нужно:</p>
-                <pre><code>console.log(<mark>header</mark>);</code></pre>
+                <pre>
+<code>console.log(<mark>header</mark>);</code>
+</pre>
                 <p>Ключевое слово <code>let</code> появилось в JavaScript в 2015 году, до этого для объявления
                     переменных использовалось слово <code>var</code>.</p>
                 <h2>Методы для изменения классов</h2>
                 <p>Чтобы убрать у элемента класс, нужно использовать метод <code class="nowrap">classList.remove</code>.
                     Он убирает с элемента тот класс, который указан в
                     скобках:</p>
-                <pre><code>элемент.classList.remove('класс');</code></pre>
+                <pre>
+<code>элемент.classList.remove('класс');</code>
+</pre>
                 <p>Чтобы добавить элементу класс, нужно использовать метод <code class="nowrap">classList.add</code>:
                 </p>
-                <pre><code>элемент.classList.add('класс');</code></pre>
-                <p>Метод-переключатель <code class="nowrap">classList.toggle</code> убирает у элемента указанный
+                <pre>
+<code>элемент.classList.add('класс');</code>
+</pre>
+                <p>Метод-переключатель <code>classList.toggle</code> убирает у элемента указанный
                     класс, если он есть, и добавляет, если этого класса нет:</p>
-                <pre><code>элемент.classList.toggle('класс');</code></pre>
+                <pre>
+<code>элемент.classList.toggle('класс');</code>
+</pre>
                 <h2>Свойство textContent</h2>
                 <p>У каждого элемента имеется множество свойств: его размеры, цвет и так далее. Свойство
                     <code>textContent</code> хранит в себе текстовое содержимое элемента. Свойствам можно
                     присваивать новые значения:
                 </p>
-                <pre><code>let paragraph = document.querySelector('p');
-<mark>paragraph.textContent</mark> = 'Здесь был Кекс. Мяу!';</code></pre>
+                <pre>
+<code>let paragraph = document.querySelector('p');
+<b>paragraph.textContent</b> = 'Здесь был Кекс. Мяу!';</code>
+</pre>
                 <h2>Свойство value</h2>
                 <p>У полей ввода есть особое свойство — <code>value</code>. Оно хранит данные, введённые в поле. Мы
                     можем вывести их прямо на страницу:</p>
-                <pre><code>let input = document.querySelector('input');
-paragraph.textContent = <mark>input.value</mark>;</code></pre>
+                <pre>
+<code>let input = document.querySelector('input');
+paragraph.textContent = <b>input.value</b>;</code>
+</pre>
                 <h2>Конкатенация</h2>
                 <p>Операция, когда мы «склеиваем» несколько значений, называется <b>конкатенацией</b> и в JavaScript
                     выполняется с помощью знака плюс.</p>
-                <pre><code>let name = 'Кекс';
-paragraph.textContent = 'Вас зовут ' <mark>+</mark> name <mark>+</mark> '. Хорошего дня!';
+                <pre>
+<code>let name = 'Кекс';
+paragraph.textContent = 'Вас зовут ' <b>+</b> name <b>+</b> '. Хорошего дня!';
 console.log(paragraph.textContent);
-// Выведет: Вас зовут Кекс. Хорошего дня!</code></pre>
+// Выведет: Вас зовут Кекс. Хорошего дня!</code>
+</pre>
                 <h2>Обработчики событий onclick и onsubmit</h2>
                 <p>JavaScript следит за всем, что происходит на странице. Клик по кнопке или отправка формы — это
                     <i>событие</i>. Мы можем сказать JavaScript, что сделать, когда некое событие произойдёт. Для
@@ -168,24 +190,23 @@ console.log(paragraph.textContent);
                     событие произойдёт, располагают между фигурных скобок.
                 </p>
                 <p>Свойство <code>onclick</code> означает «по клику»:</p>
-                <pre><code>let button = document.querySelector('button');
-button.<mark>onclick</mark> = function() {
-  console.log('Кнопка нажата!');
-};</code></pre>
+                <pre>
+<code>let button = document.querySelector('button');
+button.<b>onclick</b> = function() {
+    console.log('Кнопка нажата!');
+};</code>
+</pre>
                 <p>При каждом клике по кнопке в консоли будет появляться новое сообщение
                     <code>Кнопка нажата!</code>.
                 </p>
                 <p>За обработку отправки формы отвечает свойство <code>onsubmit</code>:</p>
-                <pre><code>let form = document.querySelector('form');
-form.<mark>onsubmit</mark> = function() {
-  console.log('Форма отправлена!');
-};</code></pre>
-                <p>После отправки формы в консоли появится сообщение <code>Форма отправлена!</code>.</p><br><a
-                    href="/courses/343"><svg aria-hidden="true">
-                        <use xlink:href="#icon-check-bold"></use>
-                    </svg>
-                    Продолжить
-                </a>
+                <pre>
+<code>let form = document.querySelector('form');
+form.<b>onsubmit</b> = function() {
+    console.log('Форма отправлена!');
+};</code>
+</pre>
+                <p>После отправки формы в консоли появится сообщение <code>Форма отправлена!</code>.</p>
             </div>
         </section>
         <div class="right-block">

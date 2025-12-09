@@ -1,6 +1,6 @@
 body {
   font-family: 'Raleway', sans-serif;
-  color: #000000;
+  color: black;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -93,15 +93,7 @@ aside, .right-block {
   background-color: white;
 }
 
-/*Настройки стилей основного тела статьи*/
-.content h1 {
-  font-size: 25px;
-  text-align: center;
-  margin-top: 0;
-}
-.content h2 {
-  font-size: 22px;
-}
+/*Настройка перечня страниц раздела*/
 .navigation {
   display: flex;
   flex-wrap: wrap;
@@ -113,25 +105,63 @@ aside, .right-block {
 .panel {
   text-decoration: none;
   color: black;
-  border: 2px solid #ddd;
+  background-color: #E5E5E5;
+  border: 2px solid #ccc;
   border-radius: 20px;
   margin: 5px;
   padding: 10px;
   width: 30%;
 }
 .panel:hover {
-  box-shadow: 0px 0px 15px 0px #ddd;
+  box-shadow: 0px 0px 15px 0px #ccc;
 }
 .panel h3 {
   margin: 5px 0px;
 }
-.panel hr {
+hr {
   border: 0;
-  background-color: #ddd;
+  background-color: #ccc;
   height: 2px;
 }
 .panel p {
   margin-bottom: 5px;
+}
+
+/*Настройки стилей основного тела статьи*/
+.content h1 {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 0;
+}
+.content h2 {
+  font-size: 22px;
+}
+.content h3 {
+  font-size: 18px;
+}
+.content p, .content pre {
+  font-size: 16px;
+}
+.content li {
+  line-height: 130%;
+}
+.content p code, .content li code, .content pre {
+  font-size: 14px;
+  background-color: #E5E5E5;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.content pre {
+  padding: 5px;
+}
+.example {
+  font-size: 16px;
+  background-color: #E5E5E5;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 /*Левое боковое меню навигации*/
@@ -161,5 +191,4 @@ footer {
   background-color: #ddd;
   padding: 5px;
   text-align: center;
-
 }

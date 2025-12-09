@@ -54,9 +54,10 @@
     <main>
         <aside>
             <ul>
-                <li><a href="/learning_project/html-manual/lesson1">HTML 1</a></li>
-                <li><a href="/learning_project/html-manual/lesson2">HTML 2</a></li>
-                <li class="active"><a href="/learning_project/html-manual/lesson3">HTML 3</a></li>
+                <li><a href="/learning_project/html-manual/lesson1">Урок 1. Основы HTML</a></li>
+                <li><a href="/learning_project/html-manual/lesson2">Урок 2. Структура HTML-документа</a></li>
+                <li><a href="/learning_project/html-manual/lesson3">Урок 3. Разметка текста</a></li>
+                <li class="active"><a href="/learning_project/html-manual/lesson4">Урок 4. Ссылки и изображения</a></li>
             </ul>
         </aside>
         <section class="content">
@@ -68,66 +69,43 @@
                     на другую страницу, открываете изображение, начинаете скачивать файл или перемещаетесь
                     к какому-то месту на текущей странице.</p>
                 <p>Ссылки создаются с помощью тега <code>&lt;a&gt;</code>. Например:</p>
-                <pre><code>&lt;a href="https://htmlacademy.ru"&gt;HTML Academy&lt;/a&gt;</code></pre>
+                <pre>
+<code>&lt;a href="https://htmlacademy.ru"&gt;HTML Academy&lt;/a&gt;</code></pre>
                 <p>Тег <code>&lt;a&gt;</code> можно использовать вообще без адреса, то есть без атрибута
                     <code>href</code>. Такой тег обозначает «ссылку-заглушку», которая в других условиях может
                     стать обычной ссылкой. Часто ссылки-заглушки используют, чтобы показать, что мы находимся
                     на текущей странице:</p>
-                <pre><code>&lt;ul&gt;
-  &lt;li&gt;&lt;a&gt;1 страница&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="2"&gt;2 страница&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="3"&gt;3 страница&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+                <pre>
+<code>&lt;ul&gt;
+    &lt;li&gt;&lt;a&gt;1 страница&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="2"&gt;2 страница&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="3"&gt;3 страница&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
                 <p>Когда мы удаляем атрибут <code>href</code> у ссылки, то лучше оставить подсказку
                     о том, почему мы это сделали. Подсказку можно добавить с помощью атрибута
                     <code>title</code>. Подсказка появится, когда курсор задержится над ссылкой некоторое время.</p>
-                <style>
-                    .theory-example-ul {
-                        list-style: disc !important;
-                        margin: 0 !important;
-                        padding-left: 40px !important;
-                    }
-
-                    .theory-example-ul li {
-                        margin: 0 !important;
-                        padding: 0 !important;
-                    }
-
-                    .theory-example-ul li::before {
-                        content: none !important;
-                    }
-
-                    .theory-example-a {
-                        text-decoration: underline;
-                    }
-
-                    .theory-example-a--inactive {
-                        color: inherit !important;
-                        text-decoration: none;
-                    }
-
-                    .theory-example-a--inactive:hover {
-                        color: inherit !important;
-                        text-decoration: none !important;
-                    }
-                </style>
-                <div class="browser-view">
-                    <ul class="theory-example-ul">
-                        <li><a class="theory-example-a--inactive" title="Текущая страница">1 страница</a></li>
-                        <li><a class="theory-example-a" href="#">2 страница</a></li>
-                        <li><a class="theory-example-a" href="#">3 страница</a></li>
+                <div class="example">
+                    <ul>
+                        <li><a title="Текущая страница">1 страница</a></li>
+                        <li><a href="#">2 страница</a></li>
+                        <li><a href="#">3 страница</a></li>
                     </ul>
                 </div>
                 <h3>Абсолютные ссылки</h3>
                 <p>Если нужно сделать ссылку на другой сайт в интернете, то необходимо использовать
                     «обычный» адрес. Этот «обычный» или полный адрес называется абсолютным. Выглядит он, например, так:
                 </p>
-                <pre><code>https://site.ru/blog/index.html</code></pre>
+                <pre>
+<code>https://site.ru/blog/index.html</code>
+</pre>
                 <p>Абсолютные адреса содержат минимум три части: протокол, имя сервера и путь.</p>
                 <h3>Относительные ссылки</h3>
                 <p>Когда файл по ссылке должен открываться локально на компьютере, используются относительные
                     адреса. В отличие от «обычных» адресов, в нём нет адреса сайта. Например:</p>
-                <pre><code>day-2.html</code></pre>
+                <pre>
+<code>day-2.html</code>
+</pre>
                 <p>Относительные адреса работают не только для файлов на компьютере, но и для
                     страниц в сети. Если выложить два каких-то файла в интернет (не меняя
                     их взаимное расположение), то их ссылка друг на друга всё равно будет работать.
@@ -138,12 +116,16 @@
                     просто в атрибуте <code>href</code> прописать ссылку на этот файл. А для того чтобы
                     предотвратить открытие файлов прямо в браузере, у тега <code>&lt;a&gt;</code> существует
                     атрибут <code>download</code>.</p>
-                <pre><code>&lt;a href="file.pdf" download&gt;Браузер скачает меня, а не будет читать&lt;/a&gt;</code></pre>
+                <pre>
+<code>&lt;a href="file.pdf" download&gt;Браузер скачает меня, а не будет читать&lt;/a&gt;</code>
+</pre>
                 <h3>Ссылки-якоря</h3>
                 <p>Ссылка-якорь — это обычная ссылка, в адресе которой используется символ <code>#</code>,
                     после которого следует идентификатор элемента. Идентификатор создаётся с помощью атрибута
                     <code>id</code> у того тега, к которому надо перейти при щелчке по ссылке.</p>
-                <pre><code>&lt;a href="#part1"&gt;Глава 1&lt;/a&gt;</code></pre>
+                <pre>
+<code>&lt;a href="#part1"&gt;Глава 1&lt;/a&gt;</code>
+</pre>
                 <p>Ссылка-якорь используется для прокрутки к заданной части страницы, в том числе используется
                     и в абсолютных адресах.</p>
                 <h2>Изображения</h2>
@@ -151,7 +133,9 @@
                 <p>Для подключения изображений существует тег <code>&lt;img&gt;</code>, для него не требуется
                     закрывающего тега, а путь к картинке задаётся в атрибуте <code>src</code>. Например:
                 </p>
-                <pre><code>&lt;img src="logo.png"&gt;</code></pre>
+                <pre>
+<code>&lt;img src="logo.png"&gt;</code>
+</pre>
                 <h3>Форматы изображений</h3>
                 <p>Существует несколько основных форматов изображений: <code>JPEG</code>, <code>PNG</code>,
                     <code>SVG</code> и <code>GIF</code>.</p>
@@ -172,7 +156,9 @@
                 <h3>Размеры изображения</h3>
                 <p>Для управления шириной или высотой изображения, используются атрибуты <code>width</code>
                     и <code>height</code>. Размеры в этих атрибутах задаются без единиц измерения.</p>
-                <pre><code>&lt;img src="logo.png" width="200" height="100"&gt;</code></pre>
+                <pre>
+<code>&lt;img src="logo.png" width="200" height="100"&gt;</code>
+</pre>
                 <p>Если задать только один из размеров, ширину или высоту, то вторую размерность браузер
                     вычислит самостоятельно исходя из пропорций изображения. Если задать картинке одновременно
                     и высоту, и ширину, то браузер может нарушить пропорции исходного изображения.</p>
@@ -182,8 +168,10 @@
                     оставаться доступными, например, для категории пользователей, которая не имеет возможности
                     видеть картинки.</p>
                 <p>Альтернативный текст изображения задаётся с помощью атрибута <code>alt</code>. Например:</p>
-                <pre><code>&lt;img src="cat.png" alt="Кот, который гуляет сам по себе"&gt;</code></pre>
-                <div class="browser-view"><img src="cat.png" alt="Кот, который гуляет сам по себе"></div>
+                <pre>
+<code>&lt;img src="cat.png" alt="Кот, который гуляет сам по себе"&gt;</code>
+</pre>
+                <div class="example"><img src="cat.png" alt="Кот, который гуляет сам по себе"></div>
                 <h3>Figure и figcaption</h3>
                 <p>Тег <code>&lt;figure&gt;</code> подходит для любого иллюстративного или демонстрационного материала,
                     которым можно дополнить содержание документа: схемы, графики, примеры кода, таблицы и так
@@ -193,33 +181,26 @@
                 <p>Для разъясняющего комментария к такому иллюстративному материалу существует тег
                     <code>&lt;figcaption&gt;</code>, который размещается первым или последним элементом внутри
                     <code>&lt;figure&gt;</code>. Например:</p>
-                <pre><code>&lt;figure&gt;
-  &lt;img src="image.jpg" alt="Альтернативный текст"&gt;
-  &lt;figcaption&gt;Подпись к содержимому&lt;/figcaption&gt;
-&lt;/figure&gt;</code></pre>
-                <style>
-                    .theory-example-figcaption {
-                        color: inherit !important;
-                    }
-                </style>
-                <div class="browser-view">
+                <pre>
+<code>&lt;figure&gt;
+    &lt;img src="image.jpg" alt="Альтернативный текст"&gt;
+    &lt;figcaption&gt;Подпись к содержимому&lt;/figcaption&gt;
+&lt;/figure&gt;</code>
+</pre>
+                <div class="example">
                     <figure><img src="/assets/courses/305/img/placeholder.jpg" alt="Картинка-заглушка">
-                        <figcaption class="theory-example-figcaption">Подпись к содержимому</figcaption>
+                        <figcaption>Подпись к содержимому</figcaption>
                     </figure>
                 </div>
                 <h3>Изображение-ссылка</h3>
                 <p>Ссылки можно делать не только с помощью текста, но и с помощью изображений.
                     Для этого нужно обернуть тег <code>&lt;img&gt;</code> в тег <code>&lt;a&gt;</code>. Например:
                 </p>
-                <pre><code>&lt;a href="http://keksby.ru"&gt;
-  &lt;img src="cat.png" alt="Кекс"&gt;
-&lt;/a&gt;
-</code></pre><br><a class="button button--green button--large button--wide button--icon"
-                    href="/courses/305/run/17"><svg aria-hidden="true">
-                        <use xlink:href="/img/sprites/general.v50.svg#icon-check-bold"></use>
-                    </svg>
-                    Продолжить
-                </a>
+                <pre>
+<code>&lt;a href="http://keksby.ru"&gt;
+    &lt;img src="cat.png" alt="Кекс"&gt;
+&lt;/a&gt;</code>
+</pre>
             </div>
         </section>
         <div class="right-block">

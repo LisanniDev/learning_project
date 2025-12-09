@@ -13,33 +13,25 @@
 <body>
     <header>
         <div class="header-menu">
-            <a href="/learning_project" rel="home"><img src="/learning_project/img/main_logo.svg" alt="html-css-js.ru"
-                    class="header-logo"></a>
+            <a href="/learning_project" rel="home"><img src="/learning_project/img/main_logo.svg" alt="html-css-js.ru" class="header-logo"></a>
             <nav>
                 <ul class="topmenu">
-                    <li class="topmenu-link active"><img src="/learning_project/img/html_logo.svg"
-                            alt="HTML"><br>HTML&#9660;
+                    <li class="topmenu-link"><img src="/learning_project/img/html_logo.svg" alt="HTML"><br>HTML&#9660;
                         <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные
-                                    материалы HTML</a></li>
-                            <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные
-                                    фишки</a></li>
+                            <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные материалы HTML</a></li>
+                            <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные фишки</a></li>
                         </ul>
                     </li>
-                    <li class="topmenu-link"><img src="/learning_project/img/css_logo.svg" alt="СSS"><br>CSS&#9660;
+                    <li class="topmenu-link active"><img src="/learning_project/img/css_logo.svg" alt="СSS"><br>CSS&#9660;
                         <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные
-                                    материалы CSS</a></li>
-                            <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные
-                                    фишки</a></li>
+                            <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные материалы CSS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные фишки</a></li>
                         </ul>
                     </li>
                     <li class="topmenu-link"><img src="/learning_project/img/js_logo.svg" alt="JS"><br>JavaScript&#9660;
                         <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные
-                                    материалы JS</a></li>
-                            <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные
-                                    фишки</a></li>
+                            <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные материалы JS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные фишки</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -54,52 +46,147 @@
     <main>
         <aside>
             <ul>
-                <li><a href="/learning_project/html-manual/lesson1">HTML 1</a></li>
-                <li><a href="/learning_project/html-manual/lesson2">HTML 2</a></li>
-                <li class="active"><a href="/learning_project/html-manual/lesson3">HTML 3</a></li>
+              <li class="active"><a href="/learning_project/css-manual/lesson1">Урок 1. Основы CSS</a></li>
+              <li><a href="/learning_project/css-manual/lesson2">Урок 2. Оформление текста</a></li>
+              <li><a href="/learning_project/css-manual/lesson3">HTML 3</a></li>
             </ul>
         </aside>
         <section class="content">
-            <h1>Урок 5. Основы CSS</h1>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="html, css, javascript, js">
+    <meta name="description" content="Основы frontend-разработки c использованием HTML, CSS и JavaScript">
+    <title>Основы frontend-разработки</title>
+    <link rel="stylesheet" href="/learning_project/main.css">
+    <link rel="icon" type="image/ico" href="/learning_project/img/html_logo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="header-menu">
+            <a href="/learning_project" rel="home" class="main-logo"><img src="/learning_project/img/main_logo.svg" alt="html-css-js.ru" class="header-logo"></a>
+            <nav>
+                <ul class="topmenu">
+                    <li class="topmenu-link"><img src="/learning_project/img/html_logo.svg" alt="HTML"><br>HTML&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные материалы HTML</a></li>
+                            <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные фишки</a></li>
+                        </ul>
+                    </li>
+                    <li class="topmenu-link active"><img src="/learning_project/img/css_logo.svg" alt="СSS"><br>CSS&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные материалы CSS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные фишки</a></li>
+                        </ul>
+                    </li>
+                    <li class="topmenu-link"><img src="/learning_project/img/js_logo.svg" alt="JS"><br>JavaScript&#9660;
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные материалы JS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные фишки</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- <Поиск по сайту> -->
+        <form class=search>
+            <input type="search" name="q" placeholder="Поиск по сайту" />
+            <input type="submit" value="Найти" />
+        </form>
+    </header>
+    <main>
+        <aside>
+            <ul>
+              <li class="active"><a href="/learning_project/css-manual/lesson1">Урок 1. Основы CSS</a></li>
+              <li><a href="/learning_project/css-manual/lesson2">Урок 2. Оформление текста</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <h1>Урок 1. Основы CSS</h1>
             <div>
+                <h2>CSS</h2>
+                <p>CSS расшифровывается как «Cascading Style Sheets», то есть «каскадные таблицы стилей».</p>
+                <p>Язык CSS отвечает за внешний вид страницы.</p>
+                <p>С помощью CSS можно задавать параметры для любого тега: ширину и высоту, отступы, цвет
+                    и размер шрифта, фон и так далее. Все эти параметры задаются с помощью свойств в следующем формате:
+                </p>
+                <pre>
+<code>свойство: значение;</code>
+</pre>
+                <p>Например:</p>
+                <pre>
+<code>color: red;
+padding: 10px;</code>
+</pre>
                 <h2>CSS-правила</h2>
-                <p>CSS — это язык для оформления структурированных документов, например, HTML- документов. Синтаксис —
+                <p>CSS — это язык для оформления структурированных документов, например, HTML-документов. Синтаксис —
                     это плоский список CSS-правил. CSS-правило состоит из селектора и перечня свойств и их значений:</p>
-                <pre><code>селектор {
-  свойство: значение;
-  свойство: значение;
-}</code></pre>
-                <p>Для комментариев в CSS используются символы <code>/*</code> и <code>*/</code>.</p>
+                <pre>
+<code>селектор {
+    свойство: значение;
+    свойство: значение;
+}</code>
+</pre>
                 <h2>Селекторы</h2>
                 <p>Селектор находится в начале CSS-правила, до фигурных скобок, и определяет, к каким HTML-элементам
                     применятся свойства и значения из правила.</p>
-                <pre><code>.feature-kitten {
-  padding-top: 60px;
-}</code></pre>
+                <pre>
+<code><b>.feature-kitten</b> {
+    padding-top: 60px;
+}</code>
+</pre>
                 <p>Простейшие (и самые популярные) селекторы — это селекторы по тегам и по классам. Селекторы по тегам
                     содержат имя тега без символов <code>&lt;</code> и <code>&gt;</code> и применяются ко всем
                     подходящим тегам. Селекторы по классам начинаются с точки, за которой идёт имя класса, и применяются
                     ко всем тегам с подходящим атрибутом <code>class</code>.</p>
-                <pre><code>h1 { color: red; }
-.info { color: blue; }</code></pre>
+                <pre>
+<code>h1 { color: red; }
+.info { color: blue; }</code>
+</pre>
                 <p>На странице может быть несколько списков, и стили применятся ко всем спискам, даже к тем, которые вы
                     менять не хотели. Чтобы избежать таких ситуаций, лучше не использовать селекторы по тегам или
                     использовать их как можно реже.</p>
                 <p>Если у CSS-правил отличаются только селекторы, а свойства и значения одинаковые, то их можно
                     сгруппировать через запятую.</p>
+                <pre>
+<code>h1, h2 { color: red; }</code>
+</pre>
                 <p>Также можно комбинировать любые типы селекторов через пробел. Такие селекторы называются вложенными
                     или контекстными и читаются справа налево. Например:</p>
-                <pre><code>nav a {…}
-  .menu ul {…}
-  .post .title {…}</code></pre>
+                <pre>
+<code>nav a {...}
+.menu ul {...}
+.post .title {...}</code>
+</pre>
                 <h2>Свойства и значения</h2>
                 <p>Список свойств и значений находится внутри фигурных скобок CSS-правила. Свойство определяет, какую
                     характеристику внешнего вида мы хотим изменить, а значение — как именно.</p>
-                <pre><code>.feature-kitten {
-  padding-top: 60px;
-}</code></pre>
+                <pre>
+<code>.feature-kitten {
+    padding-top: 60px;
+}</code>
+</pre>
                 <p>Каждый раз, когда мы добавляем новое свойство или изменяем его значение, мы меняем что-то на
                     странице.</p>
+                <h2>Применение классов к HTML-элементам</h2>
+                <p>Если мы хотим, чтобы определённые стили, описанные, допустим, в классе
+                    <code>feature-kitten</code>, применились к тегу <code>&lt;p&gt;</code>, то в HTML-разметке напишем так:
+                </p>
+                <pre>
+<code>&lt;p class="feature-kitten"&gt;...&lt;/p&gt;</code>
+</pre>
+                <p>У HTML-элемента может быть сколько угодно классов, в этом случае они перечисляются
+                    в атрибуте <code>class</code> через пробел, например:</p>
+                <pre>
+<code>&lt;li class="product"&gt;Товар&lt;/li&gt;
+&lt;li class="product hit"&gt;Товар, а ещё хит продаж&lt;/li&gt;
+&lt;li class="product hit sale"&gt;Товар, хит продаж и со ски-и-идкой!&lt;/li&gt;</code>
+</pre>
+                <p>Обычно миксование используют так: в один класс выносят общее оформление, а в дополнительных классах
+                    описывают его модификации.</p>
                 <h2>Наследование</h2>
                 <p>Наследование в CSS — это механизм, с помощью которого значения свойств элемента-родителя передаются
                     его элементам-потомкам. Стили, присвоенные одному элементу, наследуются всеми потомками (вложенными
@@ -108,16 +195,20 @@
                 <p>В CSS есть обычные свойства, управляющие одним параметром отображения, и есть составные свойства,
                     управляющие одновременно несколькими параметрами. Например, свойство <code>font</code>. Оно задаёт
                     сразу шесть параметров: размер и название шрифта, высоту строки и некоторые другие.</p>
-                <pre><code>font: 16px/26px "Arial", sans-serif;</code></pre>
+                <pre>
+<code>font: 16px/26px "Arial", sans-serif;</code>
+</pre>
                 <p>Если значение обычного свойства не было задано в составном, то браузер при «расшифровке» использует
                     исходное значение этого свойства.</p>
                 <h2>Типы значений: абсолютные и относительные</h2>
                 <p>Абсолютные единицы измерения привязаны к настоящим физическим размерам и связаны между собой жёсткими
                     пропорциями. Пиксели, <code>px</code>, используют чаще всего, остальные абсолютные единицы почти не
                     применяют. Примеры абсолютных единиц измерения:</p>
-                <pre><code>font-size: 1cm;
+                <pre>
+<code>font-size: 1cm;
 font-size: 10mm;
-font-size: 38px;</code></pre>
+font-size: 38px;</code>
+</pre>
                 <p>Относительные единицы измерения описывают значения, которые зависят от других значений. Например,
                     ширина элемента в процентах зависит от ширины родительского элемента, а ширина элемента в
                     <code>em</code> зависит от размера шрифта самого элемента. К относительным единицам относятся
@@ -134,19 +225,29 @@ font-size: 38px;</code></pre>
                     влиять сразу несколько CSS-правил. Механизм комбинирования стилей из разных источников в итоговый
                     набор свойств и значений для каждого тега называется каскадностью. Например, есть такой элемент в
                     разметке:</p>
-                <pre><code>&lt;p class="beloved-color"&gt;Зелёный - мой любимый цвет&lt;/p&gt;</code></pre>
+                <pre>
+<code>&lt;p class="beloved-color"&gt;Зелёный - мой любимый цвет&lt;/p&gt;</code>
+</pre>
                 <p>Заданные стили:</p>
-                <pre><code>.beloved-color { color: green; }</code></pre>
+                <pre>
+<code>.beloved-color { color: green; }</code>
+</pre>
                 <p>Браузерные стили:</p>
-                <pre><code>margin: 1em 0;</code></pre>
+                <pre>
+<code>margin: 1em 0;</code>
+</pre>
                 <p>Итоговые стили:</p>
-                <pre><code>color: green;
-margin: 1em 0;</code></pre>
+                <pre>
+<code>color: green;
+margin: 1em 0;</code>
+</pre>
                 <h2>Конфликт свойств</h2>
                 <p>На один элемент могут действовать несколько CSS-правил. Если в этих правилах есть одинаковые свойства
                     с разными значениями, то возникает конфликт. Например:</p>
-                <pre><code>ul { list-style: disc; }
-.blog-navigation ul { list-style: none; }</code></pre>
+                <pre>
+<code>ul { list-style: disc; }
+.blog-navigation ul { list-style: none; }</code>
+</pre>
                 <p>Браузеру нужно как-то решать, какими будут итоговые значения конфликтующих свойств. Конфликт
                     разрешается максимум за три шага. Если на текущем шаге определиться не удалось, то выполняется
                     следующий шаг. Вот эти шаги:</p>
@@ -160,39 +261,50 @@ margin: 1em 0;</code></pre>
                 <p>Каскад работает и внутри CSS-правил.</p>
                 <h2>Встраивание и подключение внешних стилей</h2>
                 <p>Внешние стили подключаются через тег <code>&lt;link&gt;</code></p>
-                <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+                <pre>
+<code>&lt;link rel="stylesheet" href="style.css"&gt;</code>
+</pre>
                 <p>Встраивание стилей в тег <code>&lt;style&gt;</code>. Его обычно размещают внутри
                     <code>&lt;head&gt;</code>:</p>
-                <pre><code>&lt;head&gt;
-  &lt;style&gt;
-    CSS-код
-  &lt;/style&gt;
-&lt;/head&gt;</code></pre>
+                <pre>
+<code>&lt;head&gt;
+    &lt;style&gt;
+        CSS-код
+    &lt;/style&gt;
+&lt;/head&gt;</code>
+</pre>
                 <p>Такой способ используется для оптимизации загрузки страницы, ведь в таком случае браузер не будет
                     отправлять дополнительных запросов на сервер.</p>
                 <p>Встраивание в атрибут <code>style</code>:</p>
-                <pre><code>&lt;div style="width: 50%;"&gt;&lt;/div&gt;</code></pre>
+                <pre>
+<code>&lt;div style="width: 50%;"&gt;&lt;/div&gt;</code>
+</pre>
                 <p>Свойства и значения, прописанные таким образом, применятся точечно к одному элементу.</p>
                 <p>Обычно использование этого способа считается плохой практикой. Но иногда в виде исключения бывает
                     удобнее воспользоваться встраиванием стилей в атрибут <code>style</code>, чем писать отдельные
                     CSS-правила. Например, когда нужно управлять стилями именно из разметки, и создавать отдельные
                     классы при этом будет излишне. Так бывает, когда какие-то стилевые параметры устанавливаются с
-                    помощью сторонних программ или другими людьми, например, через CMS.</p><br><a
-                    class="button button--green button--large button--wide button--icon" href="/courses/307/run/17"><svg
-                        aria-hidden="true">
-                        <use xlink:href="/img/sprites/general.v50.svg#icon-check-bold"></use>
-                    </svg>
-                    Продолжить
-                </a>
+                    помощью сторонних программ или другими людьми, например, через CMS.</p>
+                <h3>Комментарии</h3>
+                <p>В CSS тоже существуют комментарии, их отличие от HTML-комментариев в том, что код
+                    или подсказки пишутся между символами <code>/*</code> и <code>*/</code>.</p>
             </div>
         </section>
         <div class="right-block">
-
+          
         </div>
     </main>
     <footer>
         <p>Подвал</p>
     </footer>
 </body>
-
+</html>
+        <div class="right-block">
+          
+        </div>
+    </main>
+    <footer>
+        <p>Подвал</p>
+    </footer>
+</body>
 </html>
