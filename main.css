@@ -139,21 +139,18 @@ hr {
 .content h3 {
   font-size: 18px;
 }
-.content p, .content .code-block {
+.content p {
   font-size: 16px;
 }
 .content li {
   line-height: 130%;
 }
-.content p code, .content li code, .content .code-block {
+.content p code, .content li code {
   font-size: 14px;
   background-color: #E5E5E5;
   color: black;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
-.content .code-block {
-  padding: 5px;
 }
 .example {
   font-size: 16px;
