@@ -25,7 +25,6 @@
 .wrapper {
   display: flex;
   flex-flow: row wrap;
-  min-height: 100vh;
 }
 
 /* Мы говорим, что все элементы имеют ширину 100%, через flex-base */
@@ -55,7 +54,7 @@
   .aside-1 { order: 1; }
   .main    { order: 2; }
   .aside-2 { order: 3; }
-  .footer  { order: 4; flex-shrink: 0;}
+  .footer  { order: 4; }
 }
 
 /*Закреп хидера на большом масштабе*/
@@ -192,6 +191,13 @@ hr {
 }
 
 /*Настройка плиток с уроками*/
+.block-lesson {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: streth;
+  justify-content: center;
+  max-width: 100%;
+}
 .panel {
   text-decoration: none;
   color: black;
