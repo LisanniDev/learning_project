@@ -57,14 +57,6 @@
   .footer  { order: 4; }
 }
 
-/*Закреп хидера на большом масштабе*/
-@media (min-height: 700px) {
-  header {
-    /* position: fixed или position: sticky */
-    position: fixed;
-  }
-}
-
       /*Мои стили*/
 
 /*Обнулили все отступы на странице*/
