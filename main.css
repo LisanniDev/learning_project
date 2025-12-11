@@ -1,133 +1,156 @@
-body {
-  font-family: 'Raleway', sans-serif;
-  color: black;
-  margin: 0;
+/* Большие экраны */
+.navigation {
   display: flex;
-  flex-direction: column;
+  flex-flow: row wrap;
+  align-items: center;
+  /* Это выровняет элементы по конечной части линии на главной оси */
+  justify-content: flex-start;
+}
+
+/* Средние экраны */
+@media all and (max-width: 800px) {
+  .navigation {
+    /* На экранах среднего размера мы центрируем элементы, равномерно распределяя пустое пространство вокруг элементов */
+    justify-content: space-around;
+  }
+}
+
+/* Маленькие экраны */
+@media all and (max-width: 500px) {
+  .navigation {
+    /* На маленьких экранах мы больше не используем направление строки, а используем столбец */
+    flex-direction: column;
+  }
+}
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
   min-height: 100vh;
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+/* Мы говорим, что все элементы имеют ширину 100%, через flex-base */
+.wrapper > * {
+  flex: 1 100%;
+}
+
+/* Мы используем исходный порядок для первого мобильно варианта
+ * 1. header
+ * 2. article
+ * 3. aside 1
+ * 4. aside 2
+ * 5. footer
+ */
+
+/* Средние экраны */
+@media all and (min-width: 600px) {
+  /* Мы говорим обеим боковым панелям встать в одну строку */
+  .aside { flex: 1 auto; }
+}
+
+/* Большие экраны */
+@media all and (min-width: 800px) {
+  /* Мы инвертируем порядок первой боковой панели и основной и говорим главному элементу, чтобы он занимал втрое большую ширину, чем две другие боковые панели
+   */
+  .main { flex: 2 800px; }
+  .aside-1 { order: 1; }
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; flex-shrink: 0;}
+}
+
+/*Закреп хидера на большом масштабе*/
+@media (min-height: 700px) {
+  header {
+    /* position: fixed или position: sticky */
+    position: fixed;
+  }
+}
+
+      /*Мои стили*/
+
+/*Обнулили все отступы на странице*/
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+}
+/*Задали фон для всех блоков, кроме основного тела статьи*/
+header, aside, footer {
   background-color: #ddd;
 }
-.header-menu {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  margin: 0;
+.main-logo {
+  transition: 0.2s;
+}
+.main-logo:hover {
+  transform: scale(1.1);
 }
 .header-logo {
   padding-left: 20px;
-  padding-right: 50px;
-  height: 60px;
+  padding-right: 20px;
+  height: 30px;
 }
-.topmenu img {
-  height: 40px;
-}
-.topmenu, .submenu {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
+.active-top {
+  color: white;
 }
 .submenu {
   display: none;
   position: absolute;
+  list-style: none;
+  text-align: left;
+  background: white;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 170%;
 }
-.topmenu-link {
+.submenu a {
+  text-decoration: none;
+  color: black;
+}
+.navbutton {
+  font-size: 16px;
+  background: none;
+  border: none;
+  padding: 10px;
+}
+.navbutton img {
+  height: 20px;
+  padding-right: 5px;
+}
+.navbutton:hover {
+  background-color: #f95c4b;
+}
+
+.fall-arrow {
+  font-size: 20px;
+  transition: 0.2s;
+  line-height: 100%;
+}
+.navbutton:hover .fall-arrow {
+  transform: rotate(90deg);
+  transform-origin: left bottom;
   display: inline-block;
-  margin: 0;
-  padding: 5px 0px;
-  background: #ddd;
-  min-width: 100px;
-  text-align: center;
 }
-.topmenu-link:hover {
-  background: #f95c4b;
-}
-.topmenu-link:hover .submenu {
+.navbutton:hover .submenu {
   display: block;
-  margin-top: 5px;
-  margin-left: 0px;
+  margin-top: 10px;
+  margin-left: -10px;
   box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.2); 
 }
-.submenu-link {
-  padding: 20px 10px;
-  background: white;
-  text-align: left;
-  font-size: 16px;
+.nav-link:hover {
+  color: #f95c4b;
 }
-.submenu-link:hover {
-  background: #f95c4b;
-}
-.active {
-  background: white;
+.main {
+  padding: 15px;
 }
 
-/* Удаление оформления ссылок */
-.nav-link {
-  text-decoration: none;
-  color: black;
-  display: block;
-}
-.search {
-  padding-right: 20px;
-}
-main {
-  flex-grow: 1;
-  display: flex;
-  justify-content: space-around;
-  background-color: #ddd;
-}
 
-/*Выравнивание ширины блоков*/
-aside, .right-block {
-  width: 20%;
-  margin: 0;
-  padding: 0;
-}
-.content {
-  width: 60%;
-  padding: 20px;
-  background-color: white;
-}
 
-/*Настройка перечня страниц раздела*/
-.navigation {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: streth;
-  max-width: 100%;
-}
-
-/*Настройка плиток*/
-.panel {
-  text-decoration: none;
-  color: black;
-  background-color: white;
-  border: 2px solid #ddd;
-  border-radius: 20px;
-  margin: 5px;
-  padding: 10px;
-  width: 30%;
-}
-.panel:hover {
-  box-shadow: 0px 0px 15px 0px #ddd;
-}
-.panel h3 {
-  margin: 5px 0px;
-}
+/*Настройки стилей основного тела статьи*/
 hr {
   border: 0;
   background-color: #ddd;
   height: 2px;
 }
-.panel p {
-  margin-bottom: 5px;
-}
-
-/*Настройки стилей основного тела статьи*/
 .content h1 {
   font-size: 25px;
   text-align: center;
@@ -168,31 +191,51 @@ hr {
   color: #f95c4b;
 }
 
-/*Левое боковое меню навигации*/
-aside ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 10px;
-}
-aside li {
-  padding: 5px;
-}
-aside a {
+/*Настройка плиток с уроками*/
+.panel {
   text-decoration: none;
   color: black;
-  text-align: left;
-  font-size: 16px;
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 10px;
+  width: 30%;
 }
-aside li:hover {
-  background: #f95c4b;
+.panel:hover {
+  box-shadow: 0px 0px 15px 0px #ddd;
+}
+.panel h3 {
+  margin: 5px 0px;
+}
+.panel p {
+  margin-bottom: 5px;
+}
+
+/*Настройка боковых меню*/
+.aside {
+  padding: 0 10px;
+}
+.aside ul {
+  list-style: none;
+  line-height: 170%;
+  padding: 0;
+}
+.aside a {
+  text-decoration: none;
+  color: black;
+}
+.aside a:hover {
+  color: #f95c4b;
+}
+.active::before {
+  content: "⊳ ";
+  font-size: 18px;
 }
 
 
-
-/*Оформление подвала*/
-footer {
-  flex-shrink: 0;
-  background-color: #ddd;
-  padding: 5px;
+/*Настройки футера*/
+.footer {
+  padding: 15px 0;
   text-align: center;
 }

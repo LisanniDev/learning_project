@@ -10,56 +10,48 @@
     <link rel="icon" type="image/ico" href="/learning_project/img/html_logo.ico">
 </head>
 
-<body>
+<body class="wrapper">
     <header>
-        <div class="header-menu">
-            <a href="/learning_project" rel="home"><img src="/learning_project/img/main_logo.svg" alt="html-css-js.ru"
-                    class="header-logo"></a>
-            <nav>
-                <ul class="topmenu">
-                    <li class="topmenu-link active"><img src="/learning_project/img/html_logo.svg"
-                            alt="HTML"><br>HTML&#9660;
-                        <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные
-                                    материалы HTML</a></li>
-                            <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные
-                                    фишки</a></li>
-                        </ul>
-                    </li>
-                    <li class="topmenu-link"><img src="/learning_project/img/css_logo.svg" alt="СSS"><br>CSS&#9660;
-                        <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные
-                                    материалы CSS</a></li>
-                            <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные
-                                    фишки</a></li>
-                        </ul>
-                    </li>
-                    <li class="topmenu-link"><img src="/learning_project/img/js_logo.svg" alt="JS"><br>JavaScript&#9660;
-                        <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные
-                                    материалы JS</a></li>
-                            <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные
-                                    фишки</a></li>
-                        </ul>
+        <nav class="navigation">
+            <a href="/learning_project" rel="home" class="main-logo"><img src="/learning_project/img/main_logo.svg"
+                    alt="html-css-js.ru" class="header-logo"></a>
+
+            <button class="navbutton active-top"><img src="/learning_project/img/html_logo.svg" alt="HTML">HTML
+                <span class="fall-arrow">&#8250;</span>
+                <ul class="submenu">
+                    <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные
+                            материалы
+                            HTML</a></li>
+                    <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные
+                            фишки</a></li>
+                </ul>
+            </button>
+
+            <button class="navbutton"><img src="/learning_project/img/css_logo.svg" alt="СSS">CSS <span
+                    class="fall-arrow">&#8250;</span>
+                <ul class="submenu">
+                    <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные
+                            материалы
+                            CSS</a></li>
+                    <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные
+                            фишки</a></li>
+                </ul>
+            </button>
+
+            <button class="navbutton"><img src="/learning_project/img/js_logo.svg" alt="JS">JavaScript <span
+                    class="fall-arrow">&#8250;</span>
+                <ul class="submenu">
+                    <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные
+                            материалы
+                            JS</a></li>
+                    <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные
+                            фишки</a>
                     </li>
                 </ul>
-            </nav>
-        </div>
-        <!-- <Поиск по сайту> -->
-        <form class=search>
-            <input type="search" name="q" placeholder="Поиск по сайту" />
-            <input type="submit" value="Найти" />
-        </form>
+            </button>
+        </nav>
     </header>
     <main>
-        <aside>
-            <ul>
-                <li><a href="/learning_project/html-manual/lesson1">Урок 1. Основы HTML</a></li>
-                <li><a href="/learning_project/html-manual/lesson2">Урок 2. Структура HTML-документа</a></li>
-                <li class="active"><a href="/learning_project/html-manual/lesson3">Урок 3. Разметка текста</a></li>
-                <li><a href="/learning_project/html-manual/lesson4">Урок 4. Ссылки и изображения</a></li>
-            </ul>
-        </aside>
         <section class="content">
             <h1>Урок 3. Разметка текста</h1><hr>
             <div>
@@ -342,13 +334,20 @@ X&lt;sup&gt;3&lt;/sup&gt;+X&lt;sup&gt;2&lt;/sup&gt;=1</code>
 </pre>
             </div>
         </section>
-        <div class="right-block">
+        <aside class="aside aside-1">
+            <ul>
+                <li><a href="/learning_project/html-manual/lesson1">Урок 1. Основы HTML</a></li>
+                <li><a href="/learning_project/html-manual/lesson2">Урок 2. Структура HTML-документа</a></li>
+                <li class="active"><a href="/learning_project/html-manual/lesson3">Урок 3. Разметка текста</a></li>
+                <li><a href="/learning_project/html-manual/lesson4">Урок 4. Ссылки и изображения</a></li>
+            </ul>
+        </aside>
+        <aside class="aside aside-2">
 
-        </div>
-    </main>
-    <footer>
-        <p>Подвал</p>
-    </footer>
+        </aside>
+        <footer class="footer">
+            Подвал
+        </footer>
 </body>
 
 </html>

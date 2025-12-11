@@ -10,48 +10,47 @@
     <link rel="icon" type="image/ico" href="/learning_project/img/html_logo.ico">
 </head>
 
-<body>
+<body class="wrapper">
     <header>
-        <div class="header-menu">
-            <a href="/learning_project" rel="home" class="main-logo"><img src="/learning_project/img/main_logo.svg" alt="html-css-js.ru" class="header-logo"></a>
-            <nav>
-                <ul class="topmenu">
-                    <li class="topmenu-link"><img src="/learning_project/img/html_logo.svg" alt="HTML"><br>HTML&#9660;
-                        <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные материалы HTML</a></li>
-                            <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные фишки</a></li>
-                        </ul>
-                    </li>
-                    <li class="topmenu-link active"><img src="/learning_project/img/css_logo.svg" alt="СSS"><br>CSS&#9660;
-                        <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные материалы CSS</a></li>
-                            <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные фишки</a></li>
-                        </ul>
-                    </li>
-                    <li class="topmenu-link"><img src="/learning_project/img/js_logo.svg" alt="JS"><br>JavaScript&#9660;
-                        <ul class="submenu">
-                            <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные материалы JS</a></li>
-                            <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные фишки</a></li>
-                        </ul>
+        <nav class="navigation">
+            <a href="/learning_project" rel="home" class="main-logo"><img src="/learning_project/img/main_logo.svg"
+                    alt="html-css-js.ru" class="header-logo"></a>
+
+            <button class="navbutton"><img src="/learning_project/img/html_logo.svg" alt="HTML">HTML <span
+                    class="fall-arrow">&#8250;</span>
+                <ul class="submenu">
+                    <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные материалы
+                            HTML</a></li>
+                    <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные
+                            фишки</a></li>
+                </ul>
+            </button>
+
+            <button class="navbutton active-top"><img src="/learning_project/img/css_logo.svg" alt="СSS">CSS <span
+                    class="fall-arrow">&#8250;</span>
+                <ul class="submenu">
+                    <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные материалы
+                            CSS</a></li>
+                    <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные
+                            фишки</a></li>
+                </ul>
+            </button>
+
+            <button class="navbutton"><img src="/learning_project/img/js_logo.svg" alt="JS">JavaScript <span
+                    class="fall-arrow">&#8250;</span>
+                <ul class="submenu">
+                    <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные материалы
+                            JS</a></li>
+                    <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные фишки</a>
                     </li>
                 </ul>
-            </nav>
-        </div>
-        <!-- <Поиск по сайту> -->
-        <form class=search>
-            <input type="search" name="q" placeholder="Поиск по сайту" />
-            <input type="submit" value="Найти" />
-        </form>
+            </button>
+        </nav>
     </header>
     <main>
-        <aside>
-            <ul>
-              <li class="active"><a href="/learning_project/css-manual/lesson1">Урок 1. Основы CSS</a></li>
-              <li><a href="/learning_project/css-manual/lesson2">Урок 2. Оформление текста</a></li>
-            </ul>
-        </aside>
         <section class="content">
-            <h1>Урок 1. Основы CSS</h1><hr>
+            <h1>Урок 1. Основы CSS</h1>
+            <hr>
             <div>
                 <h2>CSS</h2>
                 <p>CSS расшифровывается как «Cascading Style Sheets», то есть «каскадные таблицы стилей».</p>
@@ -119,7 +118,8 @@ padding: 10px;</code>
                     странице.</p>
                 <h2>Применение классов к HTML-элементам</h2>
                 <p>Если мы хотим, чтобы определённые стили, описанные, допустим, в классе
-                    <code>feature-kitten</code>, применились к тегу <code>&lt;p&gt;</code>, то в HTML-разметке напишем так:
+                    <code>feature-kitten</code>, применились к тегу <code>&lt;p&gt;</code>, то в HTML-разметке напишем
+                    так:
                 </p>
                 <pre>
 <code>&lt;p class="feature-kitten"&gt;...&lt;/p&gt;</code>
@@ -159,7 +159,8 @@ font-size: 38px;</code>
                     ширина элемента в процентах зависит от ширины родительского элемента, а ширина элемента в
                     <code>em</code> зависит от размера шрифта самого элемента. К относительным единицам относятся
                     <code>em</code>, <code>rem</code>, <code>vh</code>, <code>vw</code> и некоторые другие, ну и,
-                    конечно же, проценты.</p>
+                    конечно же, проценты.
+                </p>
                 <h2>Стили по умолчанию</h2>
                 <p>Некоторым элементам можно не задавать никаких стилей, но у них всё равно будет какое-то оформление.
                     Например, у списка <code>&lt;ul&gt;</code> есть отступы и маркеры. Такие стили называются стилями по
@@ -211,7 +212,8 @@ margin: 1em 0;</code>
 <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>
 </pre>
                 <p>Встраивание стилей в тег <code>&lt;style&gt;</code>. Его обычно размещают внутри
-                    <code>&lt;head&gt;</code>:</p>
+                    <code>&lt;head&gt;</code>:
+                </p>
                 <pre>
 <code>&lt;head&gt;
     &lt;style&gt;
@@ -236,12 +238,18 @@ margin: 1em 0;</code>
                     или подсказки пишутся между символами <code>/*</code> и <code>*/</code>.</p>
             </div>
         </section>
-        <div class="right-block">
-          
-        </div>
-    </main>
-    <footer>
-        <p>Подвал</p>
-    </footer>
+        <aside class="aside aside-1">
+            <ul>
+                <li class="active"><a href="/learning_project/css-manual/lesson1">Урок 1. Основы CSS</a></li>
+                <li><a href="/learning_project/css-manual/lesson2">Урок 2. Оформление текста</a></li>
+            </ul>
+        </aside>
+        <aside class="aside aside-2">
+
+        </aside>
+        <footer class="footer">
+            Подвал
+        </footer>
 </body>
+
 </html>
