@@ -53,7 +53,8 @@
     </header>
     <main class="main">
         <section class="content">
-            <h1>Урок 4. Ссылки и изображения</h1><hr>
+            <h1>Урок 4. Ссылки и изображения</h1>
+            <hr>
             <div>
                 <h2>Ссылки</h2>
                 <h3>Что такое ссылка</h3>
@@ -66,7 +67,8 @@
                 <p>Тег <code>&lt;a&gt;</code> можно использовать вообще без адреса, то есть без атрибута
                     <code>href</code>. Такой тег обозначает «ссылку-заглушку», которая в других условиях может
                     стать обычной ссылкой. Часто ссылки-заглушки используют, чтобы показать, что мы находимся
-                    на текущей странице:</p>
+                    на текущей странице:
+                </p>
                 <pre>
 <code>&lt;ul&gt;
     &lt;li&gt;&lt;a&gt;1 страница&lt;/a&gt;&lt;/li&gt;
@@ -76,7 +78,8 @@
 </pre>
                 <p>Когда мы удаляем атрибут <code>href</code> у ссылки, то лучше оставить подсказку
                     о том, почему мы это сделали. Подсказку можно добавить с помощью атрибута
-                    <code>title</code>. Подсказка появится, когда курсор задержится над ссылкой некоторое время.</p>
+                    <code>title</code>. Подсказка появится, когда курсор задержится над ссылкой некоторое время.
+                </p>
                 <div class="example">
                     <ul>
                         <li><a title="Текущая страница">1 страница</a></li>
@@ -114,7 +117,8 @@
                 <h3>Ссылки-якоря</h3>
                 <p>Ссылка-якорь — это обычная ссылка, в адресе которой используется символ <code>#</code>,
                     после которого следует идентификатор элемента. Идентификатор создаётся с помощью атрибута
-                    <code>id</code> у того тега, к которому надо перейти при щелчке по ссылке.</p>
+                    <code>id</code> у того тега, к которому надо перейти при щелчке по ссылке.
+                </p>
                 <pre>
 <code>&lt;a href="#part1"&gt;Глава 1&lt;/a&gt;</code>
 </pre>
@@ -130,7 +134,8 @@
 </pre>
                 <h3>Форматы изображений</h3>
                 <p>Существует несколько основных форматов изображений: <code>JPEG</code>, <code>PNG</code>,
-                    <code>SVG</code> и <code>GIF</code>.</p>
+                    <code>SVG</code> и <code>GIF</code>.
+                </p>
                 <p>Формат <code>SVG</code> переводится как масштабируемая векторная графика. Качество таких изображений
                     не меняется при изменении размеров, да и вес у них небольшой. Отлично подходит
                     для малоцветных схем, логотипов и иконок. Чаще всего используется в случаях, когда
@@ -172,7 +177,8 @@
                     разметки.</p>
                 <p>Для разъясняющего комментария к такому иллюстративному материалу существует тег
                     <code>&lt;figcaption&gt;</code>, который размещается первым или последним элементом внутри
-                    <code>&lt;figure&gt;</code>. Например:</p>
+                    <code>&lt;figure&gt;</code>. Например:
+                </p>
                 <pre>
 <code>&lt;figure&gt;
     &lt;img src="image.jpg" alt="Альтернативный текст"&gt;
@@ -195,20 +201,21 @@
 </pre>
             </div>
         </section>
-        <aside class="aside aside-1">
-            <ul>
-                <li><a href="/learning_project/html-manual/lesson1">Урок 1. Основы HTML</a></li>
-                <li><a href="/learning_project/html-manual/lesson2">Урок 2. Структура HTML-документа</a></li>
-                <li><a href="/learning_project/html-manual/lesson3">Урок 3. Разметка текста</a></li>
-                <li class="active"><a href="/learning_project/html-manual/lesson4">Урок 4. Ссылки и изображения</a></li>
-            </ul>
-        </aside>
-        <aside class="aside aside-2">
+    </main>
+    <aside class="aside aside-1">
+        <ul>
+            <li><a href="/learning_project/html-manual/lesson1">Урок 1. Основы HTML</a></li>
+            <li><a href="/learning_project/html-manual/lesson2">Урок 2. Структура HTML-документа</a></li>
+            <li><a href="/learning_project/html-manual/lesson3">Урок 3. Разметка текста</a></li>
+            <li class="active"><a href="/learning_project/html-manual/lesson4">Урок 4. Ссылки и изображения</a></li>
+        </ul>
+    </aside>
+    <aside class="aside aside-2">
 
-        </aside>
-        <footer class="footer">
-            Подвал
-        </footer>
+    </aside>
+    <footer class="footer">
+        Подвал
+    </footer>
 </body>
 
 </html>
