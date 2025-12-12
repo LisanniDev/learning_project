@@ -52,13 +52,13 @@
    */
   .main { flex: 10 0px; }
   .aside-1 { order: 1; position: sticky; top: 40px; height: 100%; }
-  .main    { order: 2; margin-top: 30px; }
+  .main    { order: 2; margin-top: 35px; }
   .aside-2 { order: 3; position: sticky; top: 40px; height: 100%; }
   .footer  { order: 4; }
 }
 
       /*Мои стили*/
-.target:target {scroll-margin-top: 40px;}
+.target:target {scroll-margin-top: 35px;}
 /*Плавный скролл*/
 * {scroll-behavior: smooth;}
 /*Обнулили все отступы на странице*/
