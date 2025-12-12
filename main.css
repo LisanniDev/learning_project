@@ -52,7 +52,7 @@
    */
   .main { flex: 10 0px; }
   .aside-1 { order: 1; position: sticky; top: 40px; height: 100%; }
-  .main    { order: 2; margin-top: 40px; }
+  .main    { order: 2; /*margin-top: 20px;*/ }
   .aside-2 { order: 3; position: sticky; top: 40px; height: 100%; }
   .footer  { order: 4; }
 }
@@ -74,9 +74,9 @@ main {
 }
 header {
   background-color: #ddd;
-  /*position: fixed;
+  position: fixed;
   width: 100%;
-  z-index: 1;*/
+  z-index: 1;
 }
 .main-logo {
   transition: 0.2s;
