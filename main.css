@@ -58,7 +58,7 @@
 }
 
       /*Мои стили*/
-.target:target {scroll-margin-top: 35px;}
+.target:target {scroll-margin-top: 40px;}
 /*Плавный скролл*/
 * {scroll-behavior: smooth;}
 /*Обнулили все отступы на странице*/
