@@ -50,24 +50,33 @@
 @media all and (min-width: 800px) {
   /* Мы инвертируем порядок первой боковой панели и основной и говорим главному элементу, чтобы он занимал втрое большую ширину, чем две другие боковые панели
    */
-  .main { flex: 2 800px; }
-  .aside-1 { order: 1; }
-  .main    { order: 2; }
-  .aside-2 { order: 3; }
+  .main { flex: 10 0px; }
+  .aside-1 { order: 1; position: sticky; top: 40px; height: 100%; }
+  .main    { order: 2; margin-top: 40px; }
+  .aside-2 { order: 3; position: sticky; top: 40px; height: 100%; }
   .footer  { order: 4; }
 }
 
       /*Мои стили*/
-
+.target:target {scroll-margin-top: 40px;}
+/*Плавный скролл*/
+* {scroll-behavior: smooth;}
 /*Обнулили все отступы на странице*/
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
   color: black;
+  background-color: #ddd;
 }
 /*Задали фон для всех блоков, кроме основного тела статьи*/
-header, aside, footer {
+main {
+  background-color: white;
+}
+header {
   background-color: #ddd;
+  /*position: fixed;
+  width: 100%;
+  z-index: 1;*/
 }
 .main-logo {
   transition: 0.2s;
@@ -81,7 +90,7 @@ header, aside, footer {
   height: 30px;
 }
 .active-top {
-  color: white;
+  color: #f95c4b;
 }
 .submenu {
   display: none;
@@ -109,6 +118,7 @@ header, aside, footer {
 }
 .navbutton:hover {
   background-color: #f95c4b;
+  color: black;
 }
 
 .fall-arrow {
@@ -213,6 +223,7 @@ hr {
 /*Настройка боковых меню*/
 .aside {
   padding: 0 10px;
+  position: sticky;
 }
 .aside ul {
   list-style: none;
@@ -230,7 +241,9 @@ hr {
   content: "⊳ ";
   font-size: 18px;
 }
-
+.aside-2 ul ul{
+  padding-left: 15px;
+}
 
 /*Настройки футера*/
 .footer {
