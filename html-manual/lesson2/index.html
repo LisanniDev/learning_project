@@ -5,53 +5,77 @@
     <meta charset="utf-8">
     <meta name="keywords" content="html, css, javascript, js">
     <meta name="description" content="Основы frontend-разработки c использованием HTML, CSS и JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Основы frontend-разработки</title>
     <link rel="stylesheet" href="/learning_project/main.css">
     <link rel="icon" type="image/ico" href="/learning_project/img/html_logo.ico">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 </head>
 
 <body class="wrapper">
-    <header>
+    <header class="header">
         <nav class="navigation">
             <a href="/learning_project" rel="home" class="main-logo"><img src="/learning_project/img/main_logo.svg"
                     alt="html-css-js.ru" class="header-logo"></a>
-
-            <button class="navbutton active-top"><img src="/learning_project/img/html_logo.svg" alt="HTML">HTML
-                <span class="fall-arrow">&#8250;</span>
-                <ul class="submenu">
-                    <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные
-                            материалы
-                            HTML</a></li>
-                    <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные
-                            фишки</a></li>
-                </ul>
-            </button>
-
-            <button class="navbutton"><img src="/learning_project/img/css_logo.svg" alt="СSS">CSS <span
-                    class="fall-arrow">&#8250;</span>
-                <ul class="submenu">
-                    <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные
-                            материалы
-                            CSS</a></li>
-                    <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные
-                            фишки</a></li>
-                </ul>
-            </button>
-
-            <button class="navbutton"><img src="/learning_project/img/js_logo.svg" alt="JS">JavaScript <span
-                    class="fall-arrow">&#8250;</span>
-                <ul class="submenu">
-                    <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные
-                            материалы
-                            JS</a></li>
-                    <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные
-                            фишки</a>
-                    </li>
-                </ul>
-            </button>
+            <div class="nav-toggle"><span></span></div>
+            <form action="" method="get" id="searchform">
+                <input type="text" placeholder="Искать на сайте...">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <span class="theme-switch-wrapper">
+                <span>☀️</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle" />
+                    <span class="slider round"></span>
+                </label>
+                <span>🌙</span>
+            </span>
+            <ul class="menu">
+                <li class="navbutton active-top">
+                    <img src="/learning_project/img/html_logo.svg" alt="HTML">HTML
+                    <span class="fall-arrow">&#8250;</span>
+                    <ul class="submenu">
+                        <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные
+                                материалы HTML</a></li>
+                        <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные
+                                фишки</a></li>
+                    </ul>
+                </li>
+                <li class="navbutton">
+                    <img src="/learning_project/img/css_logo.svg" alt="СSS">CSS <span class="fall-arrow">&#8250;</span>
+                    <ul class="submenu">
+                        <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные
+                                материалы CSS</a></li>
+                        <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные
+                                фишки</a></li>
+                    </ul>
+                </li>
+                <li class="navbutton">
+                    <img src="/learning_project/img/js_logo.svg" alt="JS">JavaScript <span
+                        class="fall-arrow">&#8250;</span>
+                    <ul class="submenu">
+                        <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные
+                                материалы JS</a></li>
+                        <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные
+                                фишки</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
     </header>
     <main class="main">
+        <aside class="aside aside-1">
+            <h3>Учебные материалы HTML</h3>
+            <ul>
+                <li><a href="/learning_project/html-manual/lesson1">Урок 1. Основы HTML</a></li>
+                <li class="active"><a href="/learning_project/html-manual/lesson2">Урок 2. Структура HTML-документа</a>
+                </li>
+                <li><a href="/learning_project/html-manual/lesson3">Урок 3. Разметка текста</a></li>
+                <li><a href="/learning_project/html-manual/lesson4">Урок 4. Ссылки и изображения</a></li>
+            </ul>
+        </aside>
         <section class="content">
             <h1>Урок 2. Структура HTML-документа</h1>
             <hr>
@@ -146,22 +170,13 @@
                 </p>
             </div>
         </section>
-    </main>
-    <aside class="aside aside-1">
-        <h3>Учебные материалы HTML</h3>
-        <ul>
-            <li><a href="/learning_project/html-manual/lesson1">Урок 1. Основы HTML</a></li>
-            <li class="active"><a href="/learning_project/html-manual/lesson2">Урок 2. Структура HTML-документа</a></li>
-            <li><a href="/learning_project/html-manual/lesson3">Урок 3. Разметка текста</a></li>
-            <li><a href="/learning_project/html-manual/lesson4">Урок 4. Ссылки и изображения</a></li>
-        </ul>
-    </aside>
-    <aside class="aside aside-2">
+        <aside class="aside aside-2">
 
-    </aside>
-    <footer class="footer">
-        Подвал
-    </footer>
+        </aside>
+        <footer class="footer">
+            Подвал
+        </footer>
+    </main>
 </body>
 
 </html>

@@ -1,126 +1,151 @@
-/* Большие экраны */
-.navigation {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  /* Это выровняет элементы по конечной части линии на главной оси */
-  justify-content: flex-start;
+	/* Плавность переходов для всех элементов страницы*/
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	transition: 0.25s ease;
 }
-
-/* Средние экраны */
-@media all and (max-width: 800px) {
-  .navigation {
-    /* На экранах среднего размера мы центрируем элементы, равномерно распределяя пустое пространство вокруг элементов */
-    justify-content: space-around;
-  }
-}
-
-/* Маленькие экраны */
-@media all and (max-width: 500px) {
-  .navigation {
-    /* На маленьких экранах мы больше не используем направление строки, а используем столбец */
-    flex-direction: column;
-  }
-}
-.wrapper {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-/* Мы говорим, что все элементы имеют ширину 100%, через flex-base */
-.wrapper > * {
-  flex: 1 100%;
-}
-
-/* Мы используем исходный порядок для первого мобильно варианта
- * 1. header
- * 2. article
- * 3. aside 1
- * 4. aside 2
- * 5. footer
- */
-
-/* Средние экраны */
-@media all and (min-width: 600px) {
-  /* Мы говорим обеим боковым панелям встать в одну строку */
-  .aside { flex: 1 auto; }
-}
-
-/* Большие экраны */
-@media all and (min-width: 800px) {
-  /* Мы инвертируем порядок первой боковой панели и основной и говорим главному элементу, чтобы он занимал втрое большую ширину, чем две другие боковые панели
-   */
-  .main { flex: 10 0px; }
-  .aside-1 { order: 1; position: sticky; top: 40px; height: 100%; }
-  .main    { order: 2; margin-top: 35px; }
-  .aside-2 { order: 3; position: sticky; top: 40px; height: 100%; }
-  .footer  { order: 4; }
-}
-
-      /*Мои стили*/
-.target:target {scroll-margin-top: 40px;}
-/*Плавный скролл*/
+	/* Плавный скролл */
 * {scroll-behavior: smooth;}
-/*Обнулили все отступы на странице*/
+	/* Базовая поддержка обеих схем */
+:root {
+	color-scheme: light dark;
+}
+/* Светлая тема */
+:root[data-theme="light"] {
+	color-scheme: light;
+	--primary-color: #007bff;
+	--font-color: #333333;
+	--bg-color: #ffffff;
+	--heading-color: #222222;
+	--secondary-bg: #f8f9fa;
+	--border-color: #dee2e6;
+	--code-color: rgba(0, 0, 0, 0.1);
+}
+/* Тёмная тема */
+:root[data-theme="dark"] {
+	color-scheme: dark;
+	--primary-color: #0d6efd;
+	--font-color: #e1e1e1;
+	--bg-color: #121212;
+	--heading-color: #f8f8f8;
+	--secondary-bg: #1f1f1f;
+	--border-color: #444444;
+	--code-color: rgba(255, 255, 255, 0.1);
+}
+
+	/* Базовая стилизация */
 body {
-  margin: 0;
-  font-family: 'Raleway', sans-serif;
-  color: black;
-  background-color: #ddd;
+	margin: 0;
+	min-height: 100vh;
+	font-family: 'Raleway', sans-serif;
+	background-color: var(--bg-color);
+	color: var(--font-color);
+	transition: background-color 0.25s ease, color 0.25s ease;
+	display: flex;
+	flex-direction: column;
 }
-/*Задали фон для всех блоков, кроме основного тела статьи*/
+.header {
+	background-color: var(--secondary-bg);
+	padding: 15px;
+	width: 100%;
+	margin-bottom: 0px;
+	position: relative;
+	display: inline-block;
+	box-shadow: 3px 3px 1px
+		light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+	border-bottom: 1px solid var(--border-color);
+	transition: background-color 0.25s ease, color 0.25s ease,
+		border-color 0.25s ease;
+}
+
+.header ul {
+	list-style: none;
+}
+.header a {
+	text-decoration: none;
+	outline: none;
+}
+footer {
+	padding: 15px 0;
+	text-align: center;
+	background-color: var(--secondary-bg);
+	box-shadow: -3px -3px 1px light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+	border-top: 1px solid var(--border-color);
+}
 main {
-  background-color: white;
+	padding: 10px;
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
 }
-header {
-  background-color: #ddd;
-  position: fixed;
-  width: 100%;
-  z-index: 1;
+img {
+	width: 100%;
+	max-width: 100%;
 }
+main img {
+	display: block;
+	width: 100%;
+}
+h1 {
+	color: var(--heading-color);
+	margin: 0;
+	text-align: center;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 10px;
+}
+hr {
+	color: light-dark(black, white);
+}
+
+/* Настройка стилей шапки */
 .main-logo {
-  transition: 0.2s;
+	display: block;
+	float: left;
+	margin-right: 30px;
 }
 .main-logo:hover {
   transform: scale(1.1);
 }
-.header-logo {
-  padding-left: 20px;
-  padding-right: 20px;
-  height: 30px;
+.menu {
+	float: left;
 }
-.active-top {
-  color: #f95c4b;
+.menu .navbutton {
+	display: inline-block;
+	margin-right: 30px;
+	color: light-dark(black, white);
+	letter-spacing: 1px;
+	font-weight: 600;
+	line-height: 40px;
 }
-.submenu {
-  display: none;
-  position: absolute;
-  list-style: none;
-  text-align: left;
-  background: white;
-  padding: 10px;
-  font-size: 16px;
-  line-height: 170%;
+.menu a {
+	color: light-dark(black, white);
+	letter-spacing: 1px;
+	font-weight: 600;
+	display: block;
+	line-height: 40px;
 }
-.submenu a {
-  text-decoration: none;
-  color: black;
+.menu li:hover,
+.menu a:hover {
+	color: #ef5a42;
 }
-.navbutton {
-  font-size: 16px;
-  background: none;
-  border: none;
-  padding: 10px;
+.menu li:last-child {
+	margin-right: 0;
 }
-.navbutton img {
-  height: 20px;
-  padding-right: 5px;
+.menu .submenu {
+	display: none;
+	position: absolute;
+	background: var(--secondary-bg);
+	padding: 10px;
+	line-height: 170%;
 }
-.navbutton:hover {
-  background-color: #f95c4b;
-  color: black;
-}
-
 .fall-arrow {
   font-size: 20px;
   transition: 0.2s;
@@ -133,63 +158,82 @@ header {
 }
 .navbutton:hover .submenu {
   display: block;
-  margin-top: 10px;
-  margin-left: -10px;
-  box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.2); 
+  box-shadow: 3px 3px 1px light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
 }
-.nav-link:hover {
-  color: #f95c4b;
-}
-.main {
-  padding: 15px;
+.active-top {
+	text-decoration: underline;
+	text-decoration-thickness: 3px;
+	text-decoration-color: #f95c4b;
 }
 
 
+/* Настройка боковых меню */
+aside {
+	width: 20%;
+	padding: 0px 20px;
+}
+.aside-1 {
+	float: left;
+}
+.aside-2 {
+	float: right;
+}
+.aside ul {
+	list-style: none;
+	line-height: 170%;
+	padding: 0;
+}
+.aside a {
+	text-decoration: none;
+	color: var(--font-color);
+}
+.aside a:hover {
+	color: #f95c4b;
+}
+.aside .active::before {
+	content: "⊳ ";
+}
+.aside-2 ul ul {
+	padding-left: 15px;
+}
 
-/*Настройки стилей основного тела статьи*/
-hr {
-  border: 0;
-  background-color: #ddd;
-  height: 2px;
-}
-.content h1 {
-  font-size: 25px;
-  text-align: center;
-  margin-top: 0;
-}
-.content h2 {
-  font-size: 22px;
-}
-.content h3 {
-  font-size: 18px;
-}
-.content p, .content pre {
-  font-size: 16px;
+/* Настройка основного контента */
+.content {
+	margin-bottom: 30px;
+	width: 60%;
+	float: left;
 }
 .content li {
-  line-height: 130%;
+	margin-left: 30px;
+	line-height: 130%;
 }
-.content p code, .content li code, .content pre {
-  font-size: 14px;
-  background-color: #E5E5E5;
-  color: black;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.content p code,
+.content li code,
+.content pre {
+	font-size: 14px;
+	background-color: var(--code-color);
+	color: var(--font-color);
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 .content pre {
-  padding: 5px;
+	margin: 10px 0px;
+	padding: 5px;
 }
 .example {
-  font-size: 16px;
-  background-color: #E5E5E5;
-  color: black;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px;
+	background-color: var(--code-color);
+	color: var(--font-color);
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 10px 0px;
+	padding: 5px;
 }
 .content p a {
   text-decoration: none;
   color: #f95c4b;
+}
+.content p a:hover {
+	text-decoration: underline;
 }
 
 /*Настройка плиток с уроками*/
@@ -202,16 +246,16 @@ hr {
 }
 .panel {
   text-decoration: none;
-  color: black;
-  background-color: white;
-  border: 2px solid #ddd;
+  color: var(--font-color);
+  background-color: var(--code-color);
+  border: 2px solid #ccc;
   border-radius: 20px;
   margin: 5px;
   padding: 10px;
   width: 30%;
 }
 .panel:hover {
-  box-shadow: 0px 0px 15px 0px #ddd;
+  box-shadow: 0px 0px 15px 0px #ccc;
 }
 .panel h3 {
   margin: 5px 0px;
@@ -220,33 +264,219 @@ hr {
   margin-bottom: 5px;
 }
 
-/*Настройка боковых меню*/
-.aside {
-  padding: 0 10px;
-  position: sticky;
+	/* Переключатель */
+.theme-switch-wrapper {
+	display: flex;
+	align-items: center;
+	float: right;
 }
-.aside ul {
-  list-style: none;
-  line-height: 170%;
-  padding: 0;
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 52px;
+	height: 28px;
+	margin: 5px;
 }
-.aside a {
-  text-decoration: none;
-  color: black;
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
-.aside a:hover {
-  color: #f95c4b;
+/* Слайдер */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	inset: 0;
+	background-color: #ccc;
+	transition: 0.3s;
 }
-.active::before {
-  content: "⊳ ";
-  font-size: 18px;
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 22px;
+	width: 22px;
+	left: 3px;
+	bottom: 3px;
+	background-color: white;
+	transition: 0.3s;
 }
-.aside-2 ul ul{
-  padding-left: 15px;
+/* Активация слайдера */
+input:checked + .slider {
+	background-color: #ef5a42;
+}
+input:checked + .slider:before {
+	transform: translateX(24px);
+}
+/* Круглый слайдер */
+.slider.round {
+	border-radius: 999px;
+}
+.slider.round:before {
+	border-radius: 50%;
 }
 
-/*Настройки футера*/
-.footer {
-  padding: 15px 0;
-  text-align: center;
+/* Форма поиска */
+#searchform {
+	float: right;
+	margin-left: 46px;
+	/*display: inline-block;*/
+	position: relative;
+}
+#searchform input {
+	width: 170px;
+	float: left;
+	border: none;
+	padding-left: 10px;
+	height: 40px;
+	overflow: hidden;
+	outline: none;
+	color: #9e9c9c;
+	font-style: italic;
+	background-color: var(--secondary-bg);
+}
+#searchform button {
+	background: transparent;
+	height: 40px;
+	border: none;
+	position: absolute;
+	right: 10px;
+	color: #ef5a42;
+	cursor: pointer;
+	font-size: 18px;
+}
+#searchform input:focus {
+	outline: 2px solid #ef5a42;
+}
+/* Кнопка переключения меню, появляющаяся при ширине 768px */
+.nav-toggle {
+	display: none;
+	position: relative;
+	float: right;
+	width: 40px;
+	height: 40px;
+	margin-left: 20px;
+	background: #ef5a42;
+	cursor: pointer;
+}
+.nav-toggle span {
+	display: block;
+	position: absolute;
+	top: 19px;
+	left: 8px;
+	right: 8px;
+	height: 2px;
+	background: white;
+}
+.nav-toggle span:before,
+.nav-toggle span:after {
+	content: "";
+	position: absolute;
+	display: block;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: white;
+}
+.nav-toggle span:before {
+	top: -10px;
+}
+.nav-toggle span:after {
+	bottom: -10px;
+}
+/* Класс, который будет добавлен в верхнему меню при нажатии на кнопку и покажет скрытое меню */
+.menu.active {
+	max-height: 369px;
+}
+
+/* Описание медиа-запросов */
+@media (max-width: 960px) {
+	/* показываем кнопку для переключения верхней навигации */
+	.nav-toggle {
+		display: block;
+	}
+	header {
+		padding: 10px 0;
+	}
+	/* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта */
+	.menu {
+		max-height: 0;
+		background: var(--secondary-bg);
+		float: none;
+		position: absolute;
+		overflow: hidden;
+		top: 73px;
+		right: 0;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		z-index: 3;
+	}
+	/* делаем элементы списка блочными, чтобы они располагались друг под другом */
+	.menu li {
+		display: block;
+		text-align: left;
+		margin-right: 0;
+	}
+	.menu .submenu {
+		display: block;
+		position: static;
+		padding: 0;
+		padding-left: 40px;
+		border-bottom: 1px solid #ebebe3;
+		width: 100vw;
+		line-height: 100%;
+		margin: 0;
+	}
+	.fall-arrow, .navbutton:hover .fall-arrow {
+		display: none;
+	}
+	.navbutton:hover .submenu {
+		box-shadow: none;
+	}
+  .active-top {
+		text-decoration: none;
+	}
+	/* отменяем обтекание левой и правой колонок, устанавливаем им ширину 100%*/
+	.main {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.aside-1 {
+		order: 3;
+		width: 100%;
+	}
+	.content {
+		order: 1;
+	}
+	.aside-2 {
+		order: 2;
+		width: 40%;
+	}
+	.footer {
+		order: 4;
+	}
+}
+
+@media (max-width: 480px) {
+	/* отменяем обтекание для логотипа и выравниваем по центру*/
+	.main-logo {
+		float: none;
+		margin: 0 auto 15px;
+		display: table;
+	}
+	/* позиционируем меню на увеличившуюся высоту шапки */
+	.menu {
+		top: 105px;
+	}
+	/* позиционируем форму поиска по левому краю */
+	#searchform {
+		float: left;
+		margin-left: 0;
+	}
+	.aside-2 {
+		display: none;
+	}
+	.content {
+		width: 100%;
+	}
 }
