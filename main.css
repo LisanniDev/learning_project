@@ -267,11 +267,9 @@ img {
 
 /*Настройка плиток с уроками*/
 	.block-lesson {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: streth;
+		display: grid;
+		grid-template-columns: repeat(3, auto);
 		justify-content: center;
-		max-width: 100%;
 	}
 
 	.panel {
@@ -282,7 +280,6 @@ img {
 		border-radius: 20px;
 		margin: 5px;
 		padding: 10px;
-		width: 30%;
 	}
 
 	.panel:hover {
@@ -510,6 +507,8 @@ img {
   .aside-2 {
     order: 2;
   }
+  .block-lesson {
+		grid-template-columns: repeat(2, auto);
 }
 
 @media (max-width: 480px) {
@@ -536,4 +535,6 @@ img {
   .aside-2 {
     display: none;
   }
+  .block-lesson {
+		grid-template-columns: auto;
 }
