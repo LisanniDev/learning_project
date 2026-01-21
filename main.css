@@ -280,8 +280,9 @@ hr {
 /*Настройка плиток с уроками*/
 .block-lesson {
 	display: grid;
-	grid-template-columns: repeat(3, auto);
-	justify-content: center;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: 5px;
+
 }
 
 .panel {
@@ -526,7 +527,7 @@ input:checked+.slider:before {
 	}
 
 	.block-lesson {
-		grid-template-columns: repeat(2, auto);
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -559,6 +560,6 @@ input:checked+.slider:before {
 	}
 
 	.block-lesson {
-		grid-template-columns: auto;
+		grid-template-columns: 1fr;
 	}
 }
