@@ -1,126 +1,121 @@
-	/* Плавность переходов для всех элементов страницы*/
-	*,
-	*:after,
-	*:before {
-		box-sizing: border-box;
-		padding: 0;
-		margin: 0;
-		transition: 0.25s ease;
-	}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: 0.25s ease;
+}
+/* Плавный скролл */
+* {
+  scroll-behavior: smooth;
+}
+/* Базовая поддержка обеих схем */
+:root {
+  color-scheme: light dark;
+}
+/* Светлая тема */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --primary-color: #007bff;
+  --font-color: #333333;
+  --bg-color: #ffffff;
+  --heading-color: #222222;
+  --secondary-bg: #f8f9fa;
+  --border-color: #dee2e6;
+  --code-color: rgba(0, 0, 0, 0.1);
+}
+/* Тёмная тема */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --primary-color: #0d6efd;
+  --font-color: #e1e1e1;
+  --bg-color: #121212;
+  --heading-color: #f8f8f8;
+  --secondary-bg: #1f1f1f;
+  --border-color: #444444;
+  --code-color: rgba(255, 255, 255, 0.1);
+}
+/* Базовая стилизация */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+}
+.header {
+  background-color: var(--secondary-bg);
+  padding: 15px;
+  margin-bottom: 10px;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  box-shadow: 3px 3px 1px
+    light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
+}
 
-	/* Плавный скролл */
-	* {
-		scroll-behavior: smooth;
-	}
+.header ul {
+  list-style: none;
+}
+.header a {
+  text-decoration: none;
+  outline: none;
+}
+footer {
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 10px;
+  text-align: center;
+  background-color: var(--secondary-bg);
+  box-shadow: -3px -3px 1px light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+  border-top: 1px solid var(--border-color);
+}
+.main {
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 20% 1fr 20%;
+  grid-template-areas: "aside-1 content aside-2";
+}
+.aside-1 {
+  grid-area: aside-1;
+}
+.aside-2 {
+  grid-area: aside-2;
+}
+.content {
+  grid-area: content;
+}
 
-	/* Базовая поддержка обеих схем */
-	:root {
-		color-scheme: light dark;
-	}
+aside,
+.content {
+  background-color: gray;
+  margin: 10px;
+}
+  aside:empty {
+    display: none;
+  }
+.main:has(.aside-2:empty) {
+  grid-template-columns: 20% 1fr;
+  grid-template-areas: "aside-1 content";
+}
+.main:has(.aside-1:empty):has(.aside-2:empty) {
+  grid-template-columns: 1fr;
+  grid-template-areas: "content";
+}
+.main:has(.aside-1:empty):not(:has(.aside-2:empty)) {
+  grid-template-columns: 1fr 20%;
+  grid-template-areas: "content aside-2";
+}
 
-	/* Светлая тема */
-	:root[data-theme="light"] {
-		color-scheme: light;
-		--primary-color: #007bff;
-		--font-color: #333333;
-		--bg-color: #ffffff;
-		--heading-color: #222222;
-		--secondary-bg: #f8f9fa;
-		--border-color: #dee2e6;
-		--code-color: rgba(0, 0, 0, 0.1);
-	}
-
-	/* Тёмная тема */
-	:root[data-theme="dark"] {
-		color-scheme: dark;
-		--primary-color: #0d6efd;
-		--font-color: #e1e1e1;
-		--bg-color: #121212;
-		--heading-color: #f8f8f8;
-		--secondary-bg: #1f1f1f;
-		--border-color: #444444;
-		--code-color: rgba(255, 255, 255, 0.1);
-	}
-
-	/* Базовая стилизация */
-	body {
-		margin: 0;
-		min-height: 100vh;
-		font-family: 'Raleway', sans-serif;
-		background-color: var(--bg-color);
-		color: var(--font-color);
-		transition: background-color 0.25s ease, color 0.25s ease;
-		display: grid;
-		grid-template-rows: auto 1fr auto;
-		justify-items: center;
-	}
-
-	.header {
-		background-color: var(--secondary-bg);
-		padding: 15px;
-		width: 100%;
-		margin-bottom: 0px;
-		position: relative;
-		display: inline-block;
-		box-shadow: 3px 3px 1px light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
-		border-bottom: 1px solid var(--border-color);
-		transition: background-color 0.25s ease, color 0.25s ease,
-			border-color 0.25s ease;
-	}
-
-	.header ul {
-		list-style: none;
-	}
-
-	.header a {
-		text-decoration: none;
-		outline: none;
-	}
-
-	footer {
-		padding: 15px 0;
-		text-align: center;
-		background-color: var(--secondary-bg);
-		box-shadow: -3px -3px 1px light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
-		border-top: 1px solid var(--border-color);
-	}
-
-	main {
-		max-width: 1400px;
-		display: grid;
-		grid-template-columns: 20% 1fr 20%;
-		grid-template-areas: "aside-1 content aside-2";
-		gap: 20px;
-	}
-
-	.aside-1 {
-		grid-area: aside-1;
-	}
-
-	.aside-2 {
-		grid-area: aside-2;
-	}
-
-	.content {
-		grid-area: content;
-	}
-
-	.main:has(.aside-2:empty) {
-		grid-template-columns: 20% 1fr;
-		grid-template-areas: "aside-1 content";
-	}
-
-	.main:has(.aside-1:empty):has(.aside-2:empty) {
-		grid-template-columns: 1fr;
-		grid-template-areas: "content";
-	}
-
-	.main:has(.aside-1:empty):not(:has(.aside-2:empty)) {
-		grid-template-columns: 1fr 20%;
-		grid-template-areas: "content aside-2";
-	}
-
-	img {
+img {
 		width: 100%;
 		max-width: 100%;
 	}
@@ -147,16 +142,11 @@
 	hr {
 		color: light-dark(black, white);
 	}
-
-	/* Настройка стилей шапки */
+/* Настройка стилей шапки */
 	.main-logo {
 		display: block;
 		float: left;
 		margin-right: 30px;
-	}
-
-	.navbutton img {
-		height: 20px;
 	}
 
 	.main-logo:hover {
@@ -167,6 +157,10 @@
 	.header-logo {
 		padding: 0 20px;
 		height: 30px;
+	}
+
+	.navbutton img {
+		height: 20px;
 	}
 
 	/* Настройка меню */
@@ -231,22 +225,8 @@
 		text-decoration-color: #f95c4b;
 	}
 
-
-	/* Настройка боковых меню */
-	aside {
-		width: 20%;
-		padding: 0px 20px;
-	}
-
-	.aside-1 {
-		float: left;
-	}
-
-	.aside-2 {
-		float: right;
-	}
-
-	.aside ul {
+/* Настройка боковых меню */
+.aside ul {
 		list-style: none;
 		line-height: 170%;
 		padding: 0;
@@ -269,12 +249,7 @@
 		padding-left: 15px;
 	}
 
-	/* Настройка основного контента */
-	.content {
-		margin-bottom: 30px;
-		width: 60%;
-		float: left;
-	}
+/* Настройка основного контента */
 
 	.content li {
 		margin-left: 30px;
@@ -314,7 +289,7 @@
 		text-decoration: underline;
 	}
 
-	/*Настройка плиток с уроками*/
+/*Настройка плиток с уроками*/
 	.block-lesson {
 		display: flex;
 		flex-wrap: wrap;
@@ -487,10 +462,10 @@
 		max-height: 369px;
 	}
 
-	/* Описание медиа-запросов */
-	@media (max-width: 960px) {
 
-		/* показываем кнопку для переключения верхней навигации */
+
+@media (max-width: 960px) {
+  	/* показываем кнопку для переключения верхней навигации */
 		.nav-toggle {
 			display: block;
 		}
@@ -498,8 +473,7 @@
 		header {
 			padding: 10px 0;
 		}
-
-		/* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта */
+  		/* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта */
 		.menu {
 			max-height: 0;
 			background: var(--secondary-bg);
@@ -544,25 +518,23 @@
 		.active-top {
 			text-decoration: none;
 		}
+  
+  .main {
+    grid-template-columns: 1fr 20%;
+    grid-template-areas:
+      "content aside-2"
+      "aside-1 aside-1";
+  }
+  .main:has(.aside-2:empty) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "content"
+      "aside-1";
+  }
+}
 
-		.main {
-			grid-template-columns: 1fr 20%;
-			grid-template-areas:
-				"content aside-2"
-				"aside-1 aside-1";
-		}
-
-		.main:has(.aside-2:empty) {
-			grid-template-columns: 1fr;
-			grid-template-areas:
-				"content"
-				"aside-1";
-		}
-	}
-
-	@media (max-width: 480px) {
-
-		/* отменяем обтекание для логотипа и выравниваем по центру*/
+@media (max-width: 480px) {
+  /* отменяем обтекание для логотипа и выравниваем по центру*/
 		.main-logo {
 			float: none;
 			margin: 0 auto 15px;
@@ -579,15 +551,13 @@
 			float: left;
 			margin-left: 0;
 		}
-
-		.aside-2 {
-			display: none;
-		}
-
-		.main {
-			grid-template-columns: 1fr;
-			grid-template-areas:
-				"content"
-				"aside-1";
-		}
-	}
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "content"
+      "aside-1";
+  }
+  .aside-2 {
+    display: none;
+  }
+}
