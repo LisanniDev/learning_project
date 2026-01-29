@@ -17,52 +17,59 @@
 <body class="wrapper">
     <header class="header">
         <nav class="navigation">
-            <a href="/learning_project" rel="home" class="main-logo"><img src="/learning_project/img/main_logo.svg"
-                    alt="html-css-js.ru" class="header-logo"></a>
-            <div class="nav-toggle"><span></span></div>
-            <form action="" method="get" id="searchform">
-                <input type="text" placeholder="Искать на сайте...">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-            <span class="theme-switch-wrapper">
-                <span>☀️</span>
-                <label class="switch">
-                    <input type="checkbox" id="theme-toggle" />
-                    <span class="slider round"></span>
-                </label>
-                <span>🌙</span>
-            </span>
-            <div class="menu">
-                <li class="navbutton">
-                    <img src="/learning_project/img/html_logo.svg" alt="HTML">HTML
-                    <span class="fall-arrow">&#8250;</span>
-                    <ul class="submenu">
-                        <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные
-                                материалы HTML</a></li>
-                        <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные
-                                фишки</a></li>
-                    </ul>
-                </li>
-                <li class="navbutton active-top">
-                    <img src="/learning_project/img/css_logo.svg" alt="СSS">CSS <span class="fall-arrow">&#8250;</span>
-                    <ul class="submenu">
-                        <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные
-                                материалы CSS</a></li>
-                        <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные
-                                фишки</a></li>
-                    </ul>
-                </li>
-                <li class="navbutton">
-                    <img src="/learning_project/img/js_logo.svg" alt="JS">JavaScript <span
-                        class="fall-arrow">&#8250;</span>
-                    <ul class="submenu">
-                        <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные
-                                материалы JS</a></li>
-                        <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные
-                                фишки</a>
-                        </li>
-                    </ul>
-                </li>
+            <div class="nav-left">
+                <a href="/learning_project" rel="home" class="main-logo"><img src="/learning_project/img/main_logo.svg"
+                        alt="html-css-js.ru" class="header-logo"></a>
+                <div class="menu">
+                    <li class="navbutton">
+                        <img src="/learning_project/img/html_logo.svg" alt="HTML">HTML
+                        <span class="fall-arrow">&#8250;</span>
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/html-manual" class="nav-link">Учебные
+                                    материалы HTML</a></li>
+                            <li class="submenu-link"><a href="/learning_project/html-features" class="nav-link">Полезные
+                                    фишки</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbutton active-top">
+                        <img src="/learning_project/img/css_logo.svg" alt="СSS">CSS <span
+                            class="fall-arrow">&#8250;</span>
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/css-manual" class="nav-link">Учебные
+                                    материалы CSS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/css-features" class="nav-link">Полезные
+                                    фишки</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbutton active-top">
+                        <img src="/learning_project/img/js_logo.svg" alt="JS">JavaScript <span
+                            class="fall-arrow">&#8250;</span>
+                        <ul class="submenu">
+                            <li class="submenu-link"><a href="/learning_project/js-manual" class="nav-link">Учебные
+                                    материалы JS</a></li>
+                            <li class="submenu-link"><a href="/learning_project/js-features" class="nav-link">Полезные
+                                    фишки</a>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="switch-align">
+                <span class="theme-switch-wrapper">
+                    <span>☀️</span>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle" />
+                        <span class="slider round"></span>
+                    </label>
+                    <span>🌙</span>
+                </span>
+                </div>
+                <form action="" method="get" id="searchform">
+                    <input type="text" placeholder="Искать на сайте...">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <div class="nav-toggle"><span></span></div>
             </div>
         </nav>
     </header>

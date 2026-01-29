@@ -56,15 +56,25 @@ body {
 
 .header {
 	background-color: var(--secondary-bg);
-	padding: 0 15px;
 	margin-bottom: 10px;
 	width: 100%;
-	position: relative;
-	display: inline-block;
-	box-shadow: 3px 3px 1px light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+	box-shadow: 0px 3px 1px light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
 	border-bottom: 1px solid var(--border-color);
 	transition: background-color 0.25s ease, color 0.25s ease,
 		border-color 0.25s ease;
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-left,
+.nav-right {
+	display: flex;
+	align-items: center;
+	gap: 20px;
 }
 
 .header ul {
@@ -144,9 +154,8 @@ h6 {
 
 /* Настройка стилей шапки */
 .main-logo {
+	padding: 0 15px;
 	display: block;
-	float: left;
-	margin-right: 30px;
 }
 
 .main-logo:hover {
@@ -155,7 +164,6 @@ h6 {
 
 /* Настройка логотипов шапки*/
 .header-logo {
-	padding: 0 20px;
 	height: 30px;
 }
 
@@ -166,12 +174,22 @@ h6 {
 
 /* Настройка меню */
 .menu {
-	float: left;
-	position: relative;
+	display: flex;
+	list-style: none;
+}
+
+.submenu {
+	list-style: none;
+	display: none;
+	position: absolute;
+	top: 50px;
+	background-color: var(--secondary-bg);
+	padding: 10px;
+	min-width: 250px;
+	line-height: 170%;
 }
 
 .menu .navbutton {
-	display: inline-block;
 	margin-right: 30px;
 	color: light-dark(black, white);
 	letter-spacing: 1px;
@@ -183,7 +201,6 @@ h6 {
 	color: light-dark(black, white);
 	letter-spacing: 1px;
 	font-weight: 600;
-	display: block;
 	line-height: 40px;
 }
 
@@ -194,16 +211,6 @@ h6 {
 
 .menu li:last-child {
 	margin-right: 0;
-}
-
-.menu .submenu {
-	display: none;
-	position: absolute;
-	background-color: var(--secondary-bg);
-	padding: 10px;
-	min-width: 250px;
-	line-height: 170%;
-	z-index: 100;
 }
 
 .fall-arrow {
@@ -323,10 +330,13 @@ h6 {
 }
 
 /* Переключатель */
+.switch-align {
+	display: inline-block;
+}
+
 .theme-switch-wrapper {
 	display: flex;
 	align-items: center;
-	float: right;
 }
 
 .switch {
@@ -334,7 +344,8 @@ h6 {
 	display: inline-block;
 	width: 52px;
 	height: 28px;
-	margin: 5px;
+	padding: 0;
+	margin: 0 5px;
 }
 
 .switch input {
@@ -383,18 +394,15 @@ input:checked+.slider:before {
 
 /* Форма поиска */
 #searchform {
-	float: right;
-	margin-left: 46px;
-	/*display: inline-block;*/
-	position: relative;
+	display: flex;
+	align-items: center;
 }
 
 #searchform input {
 	width: 170px;
-	float: left;
 	border: none;
 	padding-left: 10px;
-	height: 40px;
+	height: 30px;
 	overflow: hidden;
 	outline: none;
 	color: #9e9c9c;
@@ -406,11 +414,12 @@ input:checked+.slider:before {
 	background: transparent;
 	height: 40px;
 	border: none;
-	position: absolute;
 	right: 10px;
 	color: #ef5a42;
 	cursor: pointer;
 	font-size: 18px;
+	padding-left: 5px;
+	margin-right: 15px;
 }
 
 #searchform input:focus {
@@ -421,7 +430,6 @@ input:checked+.slider:before {
 .nav-toggle {
 	display: none;
 	position: relative;
-	float: right;
 	width: 40px;
 	height: 40px;
 	margin-left: 20px;
@@ -460,7 +468,7 @@ input:checked+.slider:before {
 
 /* Класс, который будет добавлен в верхнему меню при нажатии на кнопку и покажет скрытое меню */
 .menu.active {
-	max-height: 369px;
+	max-height: 400px;
 }
 
 @media (max-width: 960px) {
@@ -471,17 +479,20 @@ input:checked+.slider:before {
 	}
 
 	header {
-		padding: 10px 0;
+		padding: 0;
+	}
+
+	#searchform button {
+		margin-right: 0;
 	}
 
 	/* скрываем верхнее меню, отменяем обтекание, позиционируем его, сместив на высоту шапки сайта */
 	.menu {
 		max-height: 0;
 		background: var(--secondary-bg);
-		float: none;
 		position: absolute;
 		overflow: hidden;
-		top: 73px;
+		top: 41px;
 		right: 0;
 		left: 0;
 		margin: 0;
@@ -548,21 +559,42 @@ input:checked+.slider:before {
 @media (max-width: 480px) {
 
 	/* отменяем обтекание для логотипа и выравниваем по центру*/
-	.main-logo {
-		float: none;
-		margin: 0 auto 15px;
-		display: table;
+	.navigation {
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.nav-right {
+		display: flex;
+		gap: 5px;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	#searchform {
+		order: 1;
+	}
+
+	.switch-align {
+		order: 2;
+	}
+
+	.nav-toggle {
+		order: 3;
 	}
 
 	/* позиционируем меню на увеличившуюся высоту шапки */
 	.menu {
-		top: 105px;
+		top: 81px;
+	}
+
+	.main-logo {
+		margin-top: 5px;
 	}
 
 	/* позиционируем форму поиска по левому краю */
 	#searchform {
-		float: left;
-		margin-left: 0;
+		margin-left: 10px;
 	}
 
 	.main {
