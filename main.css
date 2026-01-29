@@ -77,10 +77,6 @@ body {
 	gap: 20px;
 }
 
-.header ul {
-	list-style: none;
-}
-
 .header a {
 	text-decoration: none;
 	outline: none;
@@ -127,6 +123,7 @@ h1 {
 	/* Позиционируем заголовок */
 	padding-bottom: 10px;
 	/* Добавляем место под линией */
+	z-index: 1;
 }
 
 h2,
@@ -176,6 +173,7 @@ h6 {
 .menu {
 	display: flex;
 	list-style: none;
+	z-index: 2;
 }
 
 .submenu {
@@ -187,6 +185,7 @@ h6 {
 	padding: 10px;
 	min-width: 250px;
 	line-height: 170%;
+	z-index: 2;
 }
 
 .menu .navbutton {
@@ -201,6 +200,7 @@ h6 {
 	color: light-dark(black, white);
 	letter-spacing: 1px;
 	font-weight: 600;
+	display: block;
 	line-height: 40px;
 }
 
@@ -426,13 +426,12 @@ input:checked+.slider:before {
 	outline: 2px solid #ef5a42;
 }
 
-/* Кнопка переключения меню, появляющаяся при ширине 768px */
+/* Кнопка переключения меню, появляющаяся при ширине 960px */
 .nav-toggle {
 	display: none;
 	position: relative;
 	width: 40px;
 	height: 40px;
-	margin-left: 20px;
 	background: #ef5a42;
 	cursor: pointer;
 }
@@ -468,7 +467,7 @@ input:checked+.slider:before {
 
 /* Класс, который будет добавлен в верхнему меню при нажатии на кнопку и покажет скрытое меню */
 .menu.active {
-	max-height: 400px;
+	max-height: 480px;
 }
 
 @media (max-width: 960px) {
@@ -492,12 +491,12 @@ input:checked+.slider:before {
 		background: var(--secondary-bg);
 		position: absolute;
 		overflow: hidden;
+		flex-direction: column;
 		top: 41px;
 		right: 0;
 		left: 0;
 		margin: 0;
 		padding: 0;
-		z-index: 3;
 	}
 
 	/* делаем элементы списка блочными, чтобы они располагались друг под другом */
