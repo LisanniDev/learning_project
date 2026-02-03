@@ -284,7 +284,8 @@ aside h3 {
 	border-radius: 5px;
 }
 
-.content pre code, .content .example code {
+.content pre code,
+.content .example code {
 	background: none;
 	border: none;
 }
@@ -302,6 +303,17 @@ aside h3 {
 	border-radius: 5px;
 	margin: 10px 0px;
 	padding: 5px;
+}
+
+.example dl, .example dl > * {
+  all: revert;
+}
+.example blockquote, .example blockquote > * {
+  all: revert;
+}
+
+.content p {
+	margin-top: 5px;
 }
 
 .content p a {
@@ -340,6 +352,7 @@ aside h3 {
 
 .panel p {
 	margin-bottom: 5px;
+	margin-top: 0;
 }
 
 /* Переключатель */
