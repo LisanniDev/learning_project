@@ -101,6 +101,10 @@ footer {
 .aside {
 	width: 280px;
 	max-width: 20vw;
+	position: sticky;
+	top: 0;
+	height: fit-content;
+	overflow-y: hidden;
 }
 
 aside,
@@ -291,7 +295,7 @@ h6 {
 	padding: 5px;
 }
 
-.content p a {
+.content a {
 	text-decoration: none;
 	color: #f95c4b;
 }
@@ -497,6 +501,8 @@ input:checked+.slider:before {
 		left: 0;
 		margin: 0;
 		padding: 0;
+		padding-left: 10px;
+
 	}
 
 	/* делаем элементы списка блочными, чтобы они располагались друг под другом */
