@@ -138,6 +138,10 @@ h6 {
 	margin-top: 10px;
 }
 
+aside h3 {
+	margin-bottom: 20px;
+}
+
 .titled-line::after {
 	content: "";
 	/* Псевдоэлемент для линии */
@@ -271,8 +275,7 @@ h6 {
 	line-height: 130%;
 }
 
-.content p code,
-.content li code,
+.content code,
 .content pre {
 	font-size: 14px;
 	background-color: var(--code-color);
@@ -281,9 +284,15 @@ h6 {
 	border-radius: 5px;
 }
 
+.content pre code, .content .example code {
+	background: none;
+	border: none;
+}
+
 .content pre {
 	margin: 10px 0px;
 	padding: 5px;
+	white-space: pre-wrap;
 }
 
 .example {
@@ -310,6 +319,7 @@ h6 {
 	grid-template-columns: repeat(3, 1fr);
 	margin-top: 5px;
 }
+
 .panel {
 	text-decoration: none;
 	color: var(--font-color);
