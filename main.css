@@ -295,12 +295,12 @@ h6 {
 	padding: 5px;
 }
 
-.content a {
+.content p a {
 	text-decoration: none;
 	color: #f95c4b;
 }
 
-.content a:hover {
+.content p a:hover {
 	text-decoration: underline;
 }
 
@@ -309,10 +309,6 @@ h6 {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	margin-top: 5px;
-}
-.block-lesson a {
-	color: light-dark(black, white);
-	text-decoration: none;
 }
 .panel {
 	text-decoration: none;
