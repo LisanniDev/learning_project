@@ -300,7 +300,7 @@ h6 {
 	color: #f95c4b;
 }
 
-.content p a:hover {
+.content a:hover {
 	text-decoration: underline;
 }
 
@@ -310,7 +310,10 @@ h6 {
 	grid-template-columns: repeat(3, 1fr);
 	margin-top: 5px;
 }
-
+.block-lesson a {
+	color: light-dark(black, white);
+	text-decoration: none;
+}
 .panel {
 	text-decoration: none;
 	color: var(--font-color);
