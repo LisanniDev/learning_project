@@ -203,6 +203,7 @@ aside h3 {
 	letter-spacing: 1px;
 	font-weight: 600;
 	line-height: 50px;
+	cursor: pointer;
 }
 
 .menu a {
