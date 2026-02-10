@@ -17,6 +17,10 @@
 	color-scheme: light dark;
 }
 
+::selection {
+    background: #ef5a42;
+}
+
 /* Светлая тема */
 :root[data-theme="light"] {
 	color-scheme: light;
