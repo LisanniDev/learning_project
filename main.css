@@ -469,7 +469,6 @@ input:checked+.slider:before {
 }
 
 .nav-toggle span {
-	/*display: block;*/
 	position: absolute;
 	top: 19px;
 	left: 8px;
@@ -484,7 +483,6 @@ input:checked+.slider:before {
 .nav-toggle span:after {
 	content: "";
 	position: absolute;
-	display: block;
 	left: 0;
 	width: 100%;
 	height: 2px;
@@ -498,7 +496,7 @@ input:checked+.slider:before {
 }
 
 .nav-toggle span:after {
-	bottom: -10px;
+	top: 10px;
 }
 
 .nav-toggle.open span {
