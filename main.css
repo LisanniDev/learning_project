@@ -638,7 +638,7 @@ input:checked+.slider:before {
 
 	/* позиционируем меню на увеличившуюся высоту шапки */
 	.menu {
-		top: 81px;
+		top: 83px;
 	}
 
 	.main-logo {
