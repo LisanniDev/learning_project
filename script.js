@@ -36,3 +36,8 @@ if (navToggleButton && menuElement) {
     menuElement.classList.toggle('active');
   });
 }
+
+//Анимация кнопки бургер-меню
+function toggleAnimation(x) {
+  x.classList.toggle("open");
+}

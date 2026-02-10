@@ -465,7 +465,7 @@ input:checked+.slider:before {
 }
 
 .nav-toggle span {
-	display: block;
+	/*display: block;*/
 	position: absolute;
 	top: 19px;
 	left: 8px;
@@ -491,6 +491,18 @@ input:checked+.slider:before {
 
 .nav-toggle span:after {
 	bottom: -10px;
+}
+
+.nav-toggle.open span {
+    background: transparent;
+}
+.nav-toggle.open span:before {
+    top: 0px;
+    transform: rotateZ(-45deg);
+}
+.nav-toggle.open span:after {
+    top: 0px;
+    transform: rotateZ(45deg);
 }
 
 /* Класс, который будет добавлен в верхнему меню при нажатии на кнопку и покажет скрытое меню */
