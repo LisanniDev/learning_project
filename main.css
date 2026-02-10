@@ -568,8 +568,6 @@ input:checked+.slider:before {
 	.aside-1 {
 		grid-column: 1 / -1;
 		order: 3;
-		width: 95vw;
-		max-width: 95vw;
 	}
 
 	.content {
