@@ -51,15 +51,32 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+// Получаем элемент футера
+const footer = document.querySelector('footer');
+
+// Проверяем достижение конца страницы
+function isAtBottom() {
+    return window.innerHeight + window.scrollY >= document.body.offsetHeight - footer.clientHeight;
+}
 // Обработчик события прокрутки окна
 window.addEventListener('scroll', () => {
-    // Показываем кнопку, когда страница пролистана больше, чем на 100 пикселей
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollButton.style.display = 'block';
-    } else {
-        scrollButton.style.display = 'none';
+    const showScrollThreshold = 100; // Минимальная высота прокрутки для отображения кнопки
+
+    // Определяем состояние видимости кнопки
+    let buttonVisible = false;
+
+    if (isAtBottom()) { // Если достигли конца страницы
+        scrollButton.style.opacity = '1'; // Делаем кнопку непрозрачной
+        buttonVisible = true;
+    } else if (document.body.scrollTop > showScrollThreshold || document.documentElement.scrollTop > showScrollThreshold) {
+        scrollButton.style.opacity = '0.5'; // Обычная прозрачность
+        buttonVisible = true;
     }
+
+    // Отображаем или прячем кнопку
+    scrollButton.style.display = buttonVisible ? 'block' : 'none';
 });
+
 // Добавляем обработчик кликов по кнопке
 scrollButton.onclick = function(e) {
     e.preventDefault();

@@ -101,7 +101,7 @@ body {
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
-  opacity: 0.5;
+  	opacity: 0.5;
 }
 
 #scrollToTopBtn:hover {
