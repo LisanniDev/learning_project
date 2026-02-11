@@ -41,3 +41,27 @@ if (navToggleButton && menuElement) {
 function toggleAnimation(x) {
   x.classList.toggle("open");
 }
+
+// Элемент кнопки Вернуться наверх
+const scrollButton = document.getElementById('scrollToTopBtn');
+// Функция плавной прокрутки до верха страницы
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+// Обработчик события прокрутки окна
+window.addEventListener('scroll', () => {
+    // Показываем кнопку, когда страница пролистана больше, чем на 100 пикселей
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollButton.style.display = 'block';
+    } else {
+        scrollButton.style.display = 'none';
+    }
+});
+// Добавляем обработчик кликов по кнопке
+scrollButton.onclick = function(e) {
+    e.preventDefault();
+    scrollToTop(); // Вызываем функцию плавной прокрутки
+};

@@ -87,6 +87,27 @@ body {
 	outline: none;
 }
 
+/* Стили для кнопки */
+#scrollToTopBtn {
+    display: none; /* Скрыта изначально */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    background-color: #ef5a42;
+    color: white;
+    font-size: 25px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+  opacity: 0.5;
+}
+
+#scrollToTopBtn:hover {
+  opacity: 1;
+}
+
 footer {
 	width: 100%;
 	padding: 15px 0;
