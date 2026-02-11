@@ -84,5 +84,5 @@ window.addEventListener('scroll', () => {
 scrollButton.onclick = function(e) {
     e.preventDefault();
     scrollToTop(); // Запускаем плавную прокрутку
-	scrollButton.style.opacity = '';
+	scrollButton.style.opacity = '0.5';
 };
