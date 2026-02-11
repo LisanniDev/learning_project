@@ -106,8 +106,14 @@ body {
     font-family: monospace;
 }
 
-#scrollToTopBtn:hover {
+#scrollToTopBtn.at-bottom {
   opacity: 1;
+}
+
+@media (hover: hover) {
+	#scrollToTopBtn:hover {
+		opacity: 1;
+	}
 }
 
 footer {

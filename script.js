@@ -69,10 +69,10 @@ window.addEventListener('scroll', () => {
     let shouldShowButton = false;
 
     if (isAtBottom()) { // Если достиг дна страницы
-        scrollButton.style.opacity = '1';       // Устанавливаем полную непрозрачность
+        scrollButton.classList.add('at-bottom');       // Устанавливаем полную непрозрачность
         shouldShowButton = true;
     } else if (document.body.scrollTop > showScrollThreshold || document.documentElement.scrollTop > showScrollThreshold) {
-        scrollButton.style.opacity = '';         // Удаляем inline-стиль, чтобы применить стили из CSS
+        scrollButton.classList.remove('at-bottom');         // Удаляем inline-стиль, чтобы применить стили из CSS
         shouldShowButton = true;
     }
 
@@ -84,5 +84,4 @@ window.addEventListener('scroll', () => {
 scrollButton.onclick = function(e) {
     e.preventDefault();
     scrollToTop(); // Запускаем плавную прокрутку
-	scrollButton.style.opacity = '0.5';
 };
