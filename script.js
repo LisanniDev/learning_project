@@ -44,6 +44,7 @@ function toggleAnimation(x) {
 
 // Элемент кнопки Вернуться наверх
 const scrollButton = document.getElementById('scrollToTopBtn');
+
 // Функция плавной прокрутки до верха страницы
 function scrollToTop() {
     window.scrollTo({
@@ -51,6 +52,7 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+
 // Получаем элемент футера
 const footer = document.querySelector('footer');
 
@@ -58,27 +60,28 @@ const footer = document.querySelector('footer');
 function isAtBottom() {
     return window.innerHeight + window.scrollY >= document.body.offsetHeight - footer.clientHeight;
 }
+
 // Обработчик события прокрутки окна
 window.addEventListener('scroll', () => {
-    const showScrollThreshold = 100; // Минимальная высота прокрутки для отображения кнопки
+    const showScrollThreshold = 100; // Высота прокрутки для появления кнопки
 
-    // Определяем состояние видимости кнопки
-    let buttonVisible = false;
+    // Показывать ли кнопку сейчас?
+    let shouldShowButton = false;
 
-    if (isAtBottom()) { // Если достигли конца страницы
-        scrollButton.style.opacity = '1'; // Делаем кнопку непрозрачной
-        buttonVisible = true;
+    if (isAtBottom()) { // Если достиг дна страницы
+        scrollButton.style.opacity = '1';       // Устанавливаем полную непрозрачность
+        shouldShowButton = true;
     } else if (document.body.scrollTop > showScrollThreshold || document.documentElement.scrollTop > showScrollThreshold) {
-        scrollButton.style.opacity = '0.5'; // Обычная прозрачность
-        buttonVisible = true;
+        scrollButton.style.opacity = '';         // Удаляем inline-стиль, чтобы применить стили из CSS
+        shouldShowButton = true;
     }
 
-    // Отображаем или прячем кнопку
-    scrollButton.style.display = buttonVisible ? 'block' : 'none';
+    // Прячем кнопку или показываем её согласно условиям
+    scrollButton.style.display = shouldShowButton ? 'block' : 'none';
 });
 
 // Добавляем обработчик кликов по кнопке
 scrollButton.onclick = function(e) {
     e.preventDefault();
-    scrollToTop(); // Вызываем функцию плавной прокрутки
+    scrollToTop(); // Запускаем плавную прокрутку
 };
