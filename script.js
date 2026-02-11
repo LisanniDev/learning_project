@@ -61,6 +61,11 @@ function isAtBottom() {
     return window.innerHeight + window.scrollY >= document.body.offsetHeight - footer.clientHeight;
 }
 
+// Сбрасываем прозрачность кнопки при движении пальцем или прокрутке
+function resetOpacity() {
+    scrollButton.style.opacity = '';
+}
+
 // Обработчик события прокрутки окна
 window.addEventListener('scroll', () => {
     const showScrollThreshold = 100; // Высота прокрутки для появления кнопки
@@ -79,6 +84,10 @@ window.addEventListener('scroll', () => {
     // Прячем кнопку или показываем её согласно условиям
     scrollButton.style.display = shouldShowButton ? 'block' : 'none';
 });
+
+// События touchmove и wheel для сброса прозрачности
+window.addEventListener('touchmove', resetOpacity);
+window.addEventListener('wheel', resetOpacity);
 
 // Добавляем обработчик кликов по кнопке
 scrollButton.onclick = function(e) {
